@@ -15,6 +15,10 @@ public class GoToScene : MonoBehaviour {
     public void moveToParty(){
         SceneManager.LoadScene("Party");
     }
+    public void moveToBattle() {
+        SceneManager.LoadScene("Battle");
+    }
+
     public void QuitGame() { 
         Application.Quit();
     }
