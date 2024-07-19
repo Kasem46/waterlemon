@@ -6,14 +6,14 @@ using UnityEngine.SceneManagement;
 
 public class GoToScene : MonoBehaviour {
     public GameManager manager;
-    public void moveToGame(){
+    public void moveToPlotting(){
         SceneManager.LoadScene("Ploting");
     }
-    public void moveToMenu(){
-        SceneManager.LoadScene("Menu");
+    public void moveToMainMenu(){
+        SceneManager.LoadScene("MainMenu");
     }
-    public void moveToTutorial(){
-        SceneManager.LoadScene("Tutorial");
+    public void moveToParty(){
+        SceneManager.LoadScene("Party");
     }
     public void QuitGame() { 
         Application.Quit();

@@ -6,6 +6,7 @@ public class FollowPlayerCamer : MonoBehaviour {
 
 public GameObject player;
 void LateUpdate(){
+    //Simple camera tracking
     if (player.transform.position.x < 0){
         transform.position = new Vector3(0, 0f, -10f);
     } else if (player.transform.position.x > 25) {

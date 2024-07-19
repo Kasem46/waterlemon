@@ -22,6 +22,7 @@ public class ControlVaribles : MonoBehaviour{
     void Update(){
         //Get Varibles
         try{
+            //Display current value of each stat
             int influence = manager.getInfluence();
             int fame = manager.getFame();
             int ego = manager.getEgo();
@@ -38,6 +39,7 @@ public class ControlVaribles : MonoBehaviour{
             } 
         } catch {
             try{ 
+                //Find relevent text objects and apply them to GameManager
                 influenceText = GameObject.Find("Text_Influence").GetComponent<Text> ();
                 fameText = GameObject.Find("Text_Fame").GetComponent<Text> ();
                 rizzText = GameObject.Find("Text (Legacy) (4)").GetComponent<Text> ();
