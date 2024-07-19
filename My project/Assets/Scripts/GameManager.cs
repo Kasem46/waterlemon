@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
     //CreateNPC array
     public GenericNPC[] NPCs = new GenericNPC[18];
-
+    //Day
+    int day = -1;
     //Influence
     int influence = 100;
     int influenceCap = 100;
@@ -39,7 +41,6 @@ public class GameManager : MonoBehaviour {
     /// 6 = Military faction
     /// </summary>
     int faction = 0;
-
 
     // Start is called before the first frame update
     void Start(){
@@ -75,6 +76,9 @@ public class GameManager : MonoBehaviour {
     public int getFaction(){
         return faction;
     }
+    public int getDay(){
+        return day;
+    }
 
     //Set Functions
     public void setInfluence(int newVal){
@@ -94,5 +98,8 @@ public class GameManager : MonoBehaviour {
     }
     public void setFaction(int newVal){
         faction = newVal;
+    }
+    public void setDay(int newVal){
+        day = newVal;
     }
 }

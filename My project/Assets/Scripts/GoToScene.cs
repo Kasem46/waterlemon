@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 
 public class GoToScene : MonoBehaviour {
+    public GameManager manager;
     public void moveToPlotting(){
         SceneManager.LoadScene("Ploting");
     }

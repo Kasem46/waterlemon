@@ -12,6 +12,7 @@ public class ControlVaribles : MonoBehaviour{
     public Text egoText;
     public Text rizzText;
     public Text energyText;
+    public Text day;
     
     // Start is called before the first frame update
     void Start(){
@@ -28,10 +29,13 @@ public class ControlVaribles : MonoBehaviour{
             int ego = manager.getEgo();
             int energy = manager.getEnergy();
             int rizz = manager.getRizz();
+            int days = manager.getDay();
             influenceText.text  = "Influence: " + influence;
             egoText.text = "Ego: " + ego;
             rizzText.text = "Rizz: " + rizz;
             energyText.text = "Energy: " + energy;
+            
+            day.text = "Day: " + days;
             if (fame >= 0){
                 fameText.text = "Fame: " + fame;
             } else {
@@ -45,6 +49,8 @@ public class ControlVaribles : MonoBehaviour{
                 rizzText = GameObject.Find("Text (Legacy) (4)").GetComponent<Text> ();
                 energyText = GameObject.Find("Text (Legacy) (2)").GetComponent<Text> ();
                 egoText = GameObject.Find("Text (Legacy) (3)").GetComponent<Text> ();
+                day = GameObject.Find("Text (Legacy) (5)").GetComponent<Text> ();
+                manager.setDay(manager.getDay() + 1);
             } catch {
 
             }
