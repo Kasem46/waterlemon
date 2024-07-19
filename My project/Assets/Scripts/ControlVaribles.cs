@@ -21,19 +21,31 @@ public class ControlVaribles : MonoBehaviour{
     // Update is called once per frame
     void Update(){
         //Get Varibles
-        int influence = manager.getInfluence();
-        int fame = manager.getFame();
-        int ego = manager.getEgo();
-        int energy = manager.getEnergy();
-        int rizz = manager.getRizz();
-        influenceText.text = "Influence: " + influence;
-        egoText.text = "Ego: " + ego;
-        rizzText.text = "Rizz: " + rizz;
-        energyText.text = "Energy: " + energy;
-        if (fame >= 0){
-            fameText.text = "Fame: " + fame;
-        } else {
-            fameText.text = "Infamy: " + (fame * -1);
+        try{
+            int influence = manager.getInfluence();
+            int fame = manager.getFame();
+            int ego = manager.getEgo();
+            int energy = manager.getEnergy();
+            int rizz = manager.getRizz();
+            influenceText.text  = "Influence: " + influence;
+            egoText.text = "Ego: " + ego;
+            rizzText.text = "Rizz: " + rizz;
+            energyText.text = "Energy: " + energy;
+            if (fame >= 0){
+                fameText.text = "Fame: " + fame;
+            } else {
+                fameText.text = "Infamy: " + (fame * -1);
+            } 
+        } catch {
+            try{ 
+                influenceText = GameObject.Find("Text_Influence").GetComponent<Text> ();
+                fameText = GameObject.Find("Text_Fame").GetComponent<Text> ();
+                rizzText = GameObject.Find("Text (Legacy) (4)").GetComponent<Text> ();
+                energyText = GameObject.Find("Text (Legacy) (2)").GetComponent<Text> ();
+                egoText = GameObject.Find("Text (Legacy) (3)").GetComponent<Text> ();
+            } catch {
+
+            }
         }
     }
 }

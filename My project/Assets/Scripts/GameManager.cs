@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+    //Prevents deletion of this GameObject
+    
+
     //Influence
     int influence = 100;
     int influenceCap = 100;
@@ -40,7 +43,7 @@ public class GameManager : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start(){
-        
+        DontDestroyOnLoad(this.gameObject);
     }
 
     // Update is called once per frame
