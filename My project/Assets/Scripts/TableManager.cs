@@ -19,23 +19,38 @@ public class TableManager : MonoBehaviour
         
         thing = GameObject.Find("GameManager").GetComponent<GameManager>();
         //randomly populate table with people
-        peopleAtTable = Random.Range(1,4);
+        peopleAtTable = Random.Range(2,4);
         NPCS = new GenericNPC[peopleAtTable];
-        for (int i  = 0; i < NPCS.Length; i++){
-            NPCS[i] = thing.NPCs[Random.Range(0,18)];
-        }
+        randomiseNPCs();
         
+    }
+
+    void randomiseNPCs() {
+        for (int i = 0; i < NPCS.Length; i++) {
+            NPCS[i] = thing.NPCs[Random.Range(0, 18)];
+        }
+        for (int i = 0; i < NPCS.Length; i++) {
+            for (int j = 0; j < NPCS.Length; j++) {
+                if (i != j && NPCS[i] == NPCS[j]) {
+                    randomiseNPCs();
+                }
+            }
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player.transform.position.x < (this.transform.position.x - this.transform.localScale.x/2f) || player.transform.position.x > (this.transform.position.x + this.transform.localScale.x/2f))
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByBuildIndex(3))
         {
-            button.SetActive(false);
-        }
-        else { 
-            button.SetActive(true);
+            if (player.transform.position.x < (this.transform.position.x - this.transform.localScale.x / 2f) || player.transform.position.x > (this.transform.position.x + this.transform.localScale.x / 2f))
+            {
+                button.SetActive(false);
+            }
+            else
+            {
+                button.SetActive(true);
+            }
         }
     }
 
