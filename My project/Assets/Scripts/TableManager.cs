@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TableManager : MonoBehaviour
 {
 
-    private GameObject[] peopleAtTable;
+    private GameManager manager;
+
+    private GenericNPC personA;
+    private GenericNPC personB;
+    private GenericNPC personC;
 
     // Start is called before the first frame update
     void Start()
@@ -17,5 +22,9 @@ public class TableManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void onMouseDown() {
+        SceneManager.LoadScene("Plotting");
     }
 }

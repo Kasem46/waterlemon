@@ -7,6 +7,8 @@ public class GenericNPC : MonoBehaviour
     private int influence;
     private int ego;
     private int rizz;
+    private int faction;
+    private string name;
     // Start is called before the first frame update
     void Start()
     {
