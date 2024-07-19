@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    //Prevents deletion of this GameObject
-    
+    //CreateNPC array
+    GenericNPC[] NPCs;
 
     //Influence
     int influence = 100;
@@ -44,6 +44,9 @@ public class GameManager : MonoBehaviour {
     // Start is called before the first frame update
     void Start(){
         DontDestroyOnLoad(this.gameObject);
+        for (int i = 0; i < 18; i++){
+            NPCs[i] = NPCConstructor(1, 1, 1, 1, "a");
+        }
     }
 
     // Update is called once per frame
