@@ -352,7 +352,6 @@ GameObject:
   - component: {fileID: 295182352}
   - component: {fileID: 295182351}
   - component: {fileID: 295182350}
-  - component: {fileID: 295182355}
   m_Layer: 5
   m_Name: table
   m_TagString: Untagged
@@ -372,6 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab683b159e4538a468d9206817d6638b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NPCS: []
 --- !u!212 &295182351
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -439,18 +439,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &295182355
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 295182347}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d1a35c23ba9f33409bbfc52e1f50bf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &335805882
 GameObject:
   m_ObjectHideFlags: 0
@@ -1075,9 +1063,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1781372106}
-        m_TargetAssemblyTypeName: GoToScene, Assembly-CSharp
-        m_MethodName: moveToBattle
+      - m_Target: {fileID: 295182350}
+        m_TargetAssemblyTypeName: TableManager, Assembly-CSharp
+        m_MethodName: goToBattle
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

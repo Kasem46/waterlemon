@@ -181,6 +181,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea1758ab587833449aaa71eacef4efdc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NPCs:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   fame: 100
 --- !u!224 &30365583
 RectTransform:
@@ -469,7 +488,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 30365584}
         m_TargetAssemblyTypeName: GoToScene, Assembly-CSharp
-        m_MethodName: moveToBattle
+        m_MethodName: moveToParty
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

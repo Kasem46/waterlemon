@@ -14,6 +14,7 @@ public class TableManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         thing = GameObject.Find("GameManager").GetComponent<GameManager>();
         //randomly populate table with people
         peopleAtTable = Random.Range(1,4);
@@ -28,5 +29,10 @@ public class TableManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void goToBattle(){
+        DontDestroyOnLoad(this.gameObject);
+        SceneManager.LoadScene("Battle");
     }
 }
