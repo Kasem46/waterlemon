@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     //CreateNPC array
-    GenericNPC[] NPCs;
+    GenericNPC[] NPCs = new GenericNPC[18];
 
     //Influence
     int influence = 100;
@@ -45,7 +45,10 @@ public class GameManager : MonoBehaviour {
     void Start(){
         DontDestroyOnLoad(this.gameObject);
         for (int i = 0; i < 18; i++){
-            NPCs[i] = NPCConstructor(1, 1, 1, 1, "a");
+            GenericNPC temp = ScriptableObject.CreateInstance<GenericNPC>();
+            temp.e(1,1,1,1,"a");
+            NPCs[i] = temp;
+            Debug.Log(temp.getName());
         }
     }
 
