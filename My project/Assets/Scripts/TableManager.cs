@@ -35,4 +35,8 @@ public class TableManager : MonoBehaviour
         DontDestroyOnLoad(this.gameObject);
         SceneManager.LoadScene("Battle");
     }
+
+    public int getNumNPCs(){
+        return peopleAtTable();
+    }
 }
