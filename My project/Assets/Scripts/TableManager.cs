@@ -9,6 +9,8 @@ public class TableManager : MonoBehaviour
     private int peopleAtTable;
     public GenericNPC[] NPCS;
     private GameManager thing;
+    public GameObject button;
+    public GameObject player;
 
 
     // Start is called before the first frame update
@@ -28,7 +30,13 @@ public class TableManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (player.transform.position.x < (this.transform.position.x - this.transform.localScale.x/2f) || player.transform.position.x > (this.transform.position.x + this.transform.localScale.x/2f))
+        {
+            button.SetActive(false);
+        }
+        else { 
+            button.SetActive(true);
+        }
     }
 
     public void goToBattle(){

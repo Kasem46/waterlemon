@@ -11,17 +11,16 @@ public class SimpleMovement : MonoBehaviour{
 
     // Update is called once per frame
     void Update(){
-        float speed = 0.007f;
+        float speed = 4f;
+        float a = (speed * Time.deltaTime);
         //Simple movement
         if (Input.GetKey(KeyCode.LeftShift)){
             speed /= 2;
         }
         if (Input.GetKey("d") && player.transform.position.x < 33.30029f){
-            float a = player.transform.position.x + (speed);
-            transform.position = new Vector3(a, -2.93f, 0f);
+            transform.position = new Vector3(player.transform.position.x + a, -2.93f, 0f);
         } else if (Input.GetKey("a") && player.transform.position.x > -8.340001f){
-            float a = player.transform.position.x + (-speed);
-            transform.position = new Vector3(a, -2.93f, 0f);
+            transform.position = new Vector3(player.transform.position.x -a, -2.93f, 0f);
         }
         if (-4f >= player.transform.position.x){
             exitButton.SetActive(true);
