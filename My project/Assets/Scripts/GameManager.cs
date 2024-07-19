@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
-    //Prevents deletion of this GameObject
-    
+    //CreateNPC array
+    GenericNPC[] NPCs = new GenericNPC[18];
 
     //Influence
     int influence = 100;
@@ -44,6 +44,12 @@ public class GameManager : MonoBehaviour {
     // Start is called before the first frame update
     void Start(){
         DontDestroyOnLoad(this.gameObject);
+        for (int i = 0; i < 18; i++){
+            GenericNPC temp = ScriptableObject.CreateInstance<GenericNPC>();
+            temp.e(1,1,1,1,"a");
+            NPCs[i] = temp;
+            Debug.Log(temp.getName());
+        }
     }
 
     // Update is called once per frame
