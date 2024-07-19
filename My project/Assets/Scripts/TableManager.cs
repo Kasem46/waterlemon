@@ -37,6 +37,10 @@ public class TableManager : MonoBehaviour
     }
 
     public int getNumNPCs(){
-        return peopleAtTable();
+        return peopleAtTable;
+    }
+
+    public GenericNPC[] getNPCs(){
+        return NPCS;
     }
 }
