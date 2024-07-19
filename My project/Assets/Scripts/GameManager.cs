@@ -7,6 +7,10 @@ public class GameManager : MonoBehaviour {
 
     //CreateNPC array
     public GenericNPC[] NPCs = new GenericNPC[18];
+    //NPC names, current amount: 11
+    string[] NPCNames  = new string[] {"Edmund", "Lord Alistair", "Leopold", "Maximus", "Darian", "Aricor", "Everard", "Romarian", "Percival Magnus", "Amara", "Gwendolyn", "Emmaline", "Isadora", "Victoria", "Gabriella", "Matilda Gracebourne", "Regalis", "Thaddeus"};
+    string[] NPCLastNames = new string[] {"Octavius", "VII", "Bartholomew", "Thorne", "Blackthorne", "IX", "the Resplendent", "IV", "II", "Starlight", "Valentina", "Esmeralda", "Ravenshield", "Somerset", "III", "XII", "Stormbreaker", "the Great"};
+    private string name;
     //Day
     int day = -1;
     //Influence
@@ -47,7 +51,8 @@ public class GameManager : MonoBehaviour {
         DontDestroyOnLoad(this.gameObject);
         for (int i = 0; i < 18; i++){
             GenericNPC temp = ScriptableObject.CreateInstance<GenericNPC>();
-            temp.e(1,1,1,1,"a");
+            name = NPCNames[Random.Range(0, NPCNames.Length)] + " " + NPCLastNames[Random.Range(0, NPCLastNames.Length)];
+            temp.e(1,1,1,1,name);
             NPCs[i] = temp;
         }
     }
