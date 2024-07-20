@@ -9,6 +9,7 @@ TagManager:
   - MainButtons
   - GameManager
   - Miror
+  - FactionPage3
   layers:
   - Default
   - TransparentFX
