@@ -16,23 +16,18 @@ public class GameManager : MonoBehaviour {
     int day = -1;
     //Influence
     int influence;
-    int influenceCap = 100;
 
     //Infamy
     public int fame;
-    int fameCap = 100;
 
     //Energy
     int energy = 100;
-    int energyCap = 100;
 
     //Ego
     int ego;
-    int egoCap = 100;
 
     //Charisma
     int rizz;
-    int rizzCap = 100;
 
     /// <summary>
     /// Factions
@@ -55,7 +50,7 @@ public class GameManager : MonoBehaviour {
         fame = Random.Range(30, 50);
         ego = Random.Range(30, 50);
         rizz = Random.Range(30, 50);
-        //Create Royal Faction NPCs + Leader
+        //Create Royal Faction NPCs
         CreateNPC(2, 1, 50, 100, 30, 70, 30, 70);
         CreateNPC(1, 1, 60, 110, 40, 80, 40, 80, "Regent " + NPCNames[Random.Range(0, NPCNames.Length)] + " " + NPCLastNames[Random.Range(0, NPCNames.Length)]);
         //Create Church Faction NPCs
@@ -97,7 +92,6 @@ public class GameManager : MonoBehaviour {
         }
         NumNPCs += amount;
     }
-    
     //Get Functions
     public int getInfluence(){
         return influence;

@@ -8,6 +8,7 @@ TagManager:
   - FactionPage2
   - MainButtons
   - GameManager
+  - Miror
   layers:
   - Default
   - TransparentFX

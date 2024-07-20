@@ -7,6 +7,7 @@ public class PlotElementControler : MonoBehaviour {
     private GameObject[] FactionsArray1;
     private GameObject[] FactionsArray2;
     private GameObject[] Buttons;
+    private GameObject[] Miror;
     //Show/Hide main buttons    
     private void setMainButtons() {Buttons = GameObject.FindGameObjectsWithTag ("MainButtons");}
     public void hideMainButtons(){
@@ -56,11 +57,32 @@ public class PlotElementControler : MonoBehaviour {
             go.SetActive (true);
         }
     }
+
+    //Mirror Toggles
+
+    public void openMiror(){
+        hideMainButtons();
+        foreach(GameObject go in Miror){
+            go.SetActive (true);
+        }
+    }
+    public void closeMiror(){
+        foreach(GameObject go in Miror){
+            go.SetActive (false);
+        }
+        showMainButtons();
+    }
+    private void setMiror(){
+        Miror = GameObject.FindGameObjectsWithTag ("Miror");
+    }
+
     // Start is called before the first frame update
     void Start(){
         setMainButtons();
         setFactionBook();
+        setMiror();
         closeFactionBook();
+        closeMiror();
     }
 
     // Update is called once per frame
