@@ -10,6 +10,7 @@ public class BattleManager : MonoBehaviour
     public GenericNPC[] NPCs;
     public int numNPCs = 3;
     private bool isPlayerTurn = true;
+    GameManager manager;
 
     //display elements
     public Text battleLog;
@@ -28,6 +29,7 @@ public class BattleManager : MonoBehaviour
         try{
 
             table = GameObject.Find("table").GetComponent<TableManager>();
+            manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         }catch {
             Debug.Log("Oopsie");
         }
@@ -83,6 +85,8 @@ public class BattleManager : MonoBehaviour
         temp.SetActive(false);
         pushToBuffer(temp);
 
+        battleLog.text = "";
+
     }
     public void pushToBuffer(GameObject a) { 
         buffer.Add(a);
@@ -90,11 +94,12 @@ public class BattleManager : MonoBehaviour
 
     public void playerAction(int type) {
         GenericNPC target = NPCs[targetSelector.value];
-        if (isPlayerTurn)
+        if (isPlayerTurn && buffer.Count == 0)
         {
             switch (type)
             {
                 case 0:
+                    insult(targetSelector.value, false, (float)manager.getRizz());
                     setBattleText("Player Insulted " + target.getName());
                     break;
                 case 1:
@@ -126,7 +131,7 @@ public class BattleManager : MonoBehaviour
     public void NPCturn() {
         //NPCs all pick options
         foreach (GenericNPC person in NPCs) {
-            setBattleText(person.getName() + " did something");
+            setBattleText(person.getName() + NPCAction(Random.Range(0,4),person));
         }
         endRound();
     }
@@ -134,5 +139,80 @@ public class BattleManager : MonoBehaviour
     public void endRound() {
         roundCount++;
         isPlayerTurn=true;
+    }
+
+    public int selectTarget(GenericNPC doer, int action) {
+        int temp = Random.Range(0, NPCs.Length + 1);
+        if (temp != NPCs.Length)
+        {
+            if (NPCs[temp] == doer)
+            {
+                temp = selectTarget(doer, action);
+                if (temp == NPCs.Length) {
+                    return temp;
+                }
+            }
+            //check to not insult your own faction
+            if (NPCs[temp].getFaction() == doer.getFaction() && (action == 0 || action == 2))
+            {
+                temp = selectTarget(doer, action);
+                if (temp == NPCs.Length) {
+                    return temp;
+                }
+            }
+        }
+
+        return temp;
+    }
+
+    public string NPCAction(int action, GenericNPC doer) {
+        string targetName;
+        int target = selectTarget(doer,action);
+        GenericNPC targetedNPC;
+        if (target == NPCs.Length)
+        {
+            targetName = "Player";
+        }
+        else {
+            targetedNPC = NPCs[target];
+            targetName = NPCs[target].getName();
+        }
+        switch (action) { 
+            case 0:
+                insult(target, true, (float)doer.getRizz());
+                return " Insulted " + targetName;
+            case 1:
+                return " complemented " + targetName;
+            case 2:
+                return " affronted " + targetName;
+            case 3:
+                return " gossiped about " + targetName;
+            default:
+                return " picks an Invalid option";
+        
+        }
+    }
+
+
+    public void insult(int target, bool NPC, float doerRiz) {
+        if (NPC)
+        {
+            if (target == NPCs.Length)
+            {
+                //NPC target player
+                manager.setInfluence(manager.getInfluence() - (int)((10f * (doerRiz / 100f))*((float)manager.getEgo()/100f)));
+
+            }
+            else {
+                //NPC target NPC
+                NPCs[target].setInfluence(NPCs[target].getInfluence() - (int)((10f * (doerRiz / 100f)) * ((float)NPCs[target].getEgo())/100f));
+            }
+
+        }
+        else {
+            //Player target NPC
+            manager.setEnergy(manager.getEnergy() - 10);
+            NPCs[target].setInfluence(NPCs[target].getInfluence() - (int)((10f * (doerRiz / 100f)) * ((float)NPCs[target].getEgo()/100f)));
+        }
     }
 }
