@@ -24,6 +24,9 @@ public class BattleManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> buffer = new List<GameObject>();
 
+    [SerializeField]
+    private GameObject arrow;
+
     //Start is called before the first frame update
     void Start()
     {
@@ -62,6 +65,16 @@ public class BattleManager : MonoBehaviour
     //Gossip - 3
     //Poison - 4
 
+    public void rotateArrow() {
+        if (NPCs.Length == 3)
+        {
+            arrow.transform.eulerAngles = new Vector3(0, 0, arrow.transform.eulerAngles.z + 90);
+        }
+        else if (NPCs.Length == 2) {
+            arrow.transform.eulerAngles = new Vector3(0, 0, arrow.transform.eulerAngles.z + 120);
+        }
+    }
+
     public void updateUI() {
         if (timer <= 0 && buffer.Count > 0)
         {
@@ -70,6 +83,8 @@ public class BattleManager : MonoBehaviour
             temp.SetActive(true);
             temp.GetComponent<BattleLogMover>().setIsCopy(true);
             timer = 3;
+
+            rotateArrow();
         }
         else {
             timer -= Time.deltaTime;

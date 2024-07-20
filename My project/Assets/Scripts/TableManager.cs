@@ -13,16 +13,25 @@ public class TableManager : MonoBehaviour
     public GameObject player;
 
 
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
         thing = GameObject.Find("GameManager").GetComponent<GameManager>();
         //randomly populate table with people
-        peopleAtTable = Random.Range(2,4);
+        peopleAtTable = Random.Range(2, 4);
         NPCS = new GenericNPC[peopleAtTable];
         randomiseNPCs();
-        
+        populateSprites();
+    }
+
+    void populateSprites() {
+        for (int i = 0; i < NPCS.Length; i++) {
+            GameObject temp = Instantiate(NPCS[i].getSprite(), this.gameObject.transform);
+            temp.transform.position = new Vector3(2*(i - 1), 0, 0);
+        }
     }
 
     void randomiseNPCs() {

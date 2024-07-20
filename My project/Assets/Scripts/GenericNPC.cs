@@ -8,6 +8,7 @@ public class GenericNPC : ScriptableObject{
     private int rizz;
     private int faction;
     private string name;
+    private GameObject sprite;
     public void e(int inf = 0, int eg = 0, int riz = 0, int fac = 0, string nam = "UNNAMED"){
         influence = inf;
         ego = eg;
@@ -16,8 +17,11 @@ public class GenericNPC : ScriptableObject{
         name = nam;
         
     }
-    
+
     //Get Functions
+    public GameObject getSprite() {
+        return sprite;    
+    }
 
     public string getName(){
         return name;
@@ -51,6 +55,10 @@ public class GenericNPC : ScriptableObject{
     }
     public void setFaction(int fac){
         faction = fac;
+    }
+
+    public void setSprite(GameObject sp) {
+        sprite = sp;
     }
 
 

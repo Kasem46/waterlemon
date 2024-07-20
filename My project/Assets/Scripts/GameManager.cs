@@ -38,6 +38,45 @@ public class GameManager : MonoBehaviour {
     //Deck Type
     int deckType;
 
+    //NPC Sprite variables
+    [SerializeField]
+    private GameObject royal;
+    [SerializeField]
+    private GameObject royalGoon1;
+    [SerializeField]
+    private GameObject royalGoon2;
+    [SerializeField]
+    private GameObject church;
+    [SerializeField]
+    private GameObject churchGoon1;
+    [SerializeField]
+    private GameObject churchGoon2;
+    [SerializeField]
+    private GameObject populist;
+    [SerializeField]
+    private GameObject populistGoon1;
+    [SerializeField]
+    private GameObject populistGoon2;
+    [SerializeField]
+    private GameObject peasent;
+    [SerializeField]
+    private GameObject peasentGoon1;
+    [SerializeField]
+    private GameObject peasentGoon2;
+    [SerializeField]
+    private GameObject merchent;
+    [SerializeField]
+    private GameObject merchentGoon1;
+    [SerializeField]
+    private GameObject merchentGoon2;
+    [SerializeField]
+    private GameObject military;
+    [SerializeField]
+    private GameObject militaryGoon1;
+    [SerializeField]
+    private GameObject militaryGoon2;
+
+
     /// <summary>
     /// Factions
     /// This varible is used to determine the player's faction
@@ -77,7 +116,32 @@ public class GameManager : MonoBehaviour {
         //Create Military Faction NPCs
         CreateNPC(2, 6, 50, 100, 30, 70, 0, 50);
         CreateNPC(1, 6, 60, 110, 40, 80, 10, 60, "General " + NPCNames[Random.Range(0, NPCNames.Length)] + " " + NPCLastNames[Random.Range(0, NPCNames.Length)]);
+
+        giveNPCSprites();
     }
+
+    public void giveNPCSprites() {
+        NPCs[0].setSprite(royalGoon1);
+        NPCs[1].setSprite(royalGoon2);
+        NPCs[2].setSprite(royal);
+        NPCs[3].setSprite(churchGoon1);
+        NPCs[4].setSprite(churchGoon2);
+        NPCs[5].setSprite(church);
+        NPCs[6].setSprite(populistGoon1);
+        NPCs[7].setSprite(populistGoon2);
+        NPCs[8].setSprite(populist);
+        NPCs[9].setSprite(peasentGoon1);
+        NPCs[10].setSprite(peasentGoon2);
+        NPCs[11].setSprite(peasent);
+        NPCs[12].setSprite(merchentGoon1);
+        NPCs[13].setSprite(merchentGoon2);
+        NPCs[14].setSprite(merchent);
+        NPCs[15].setSprite(militaryGoon1);
+        NPCs[16].setSprite(militaryGoon2);
+        NPCs[17].setSprite(military);
+    }
+
+
 
     // Update is called once per frame
     void Update(){

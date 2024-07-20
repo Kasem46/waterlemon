@@ -203,6 +203,24 @@ MonoBehaviour:
   - {fileID: 0}
   NumNPCs: 0
   fame: 100
+  royal: {fileID: 3939943615491028165, guid: 89669d058c3b9a648a55fd7d12eb6732, type: 3}
+  royalGoon1: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
+  royalGoon2: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
+  church: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
+  churchGoon1: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
+  churchGoon2: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
+  populist: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
+  populistGoon1: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
+  populistGoon2: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
+  peasent: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
+  peasentGoon1: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
+  peasentGoon2: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
+  merchent: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
+  merchentGoon1: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
+  merchentGoon2: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
+  military: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
+  militaryGoon1: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
+  militaryGoon2: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
 --- !u!224 &30365583
 RectTransform:
   m_ObjectHideFlags: 0
@@ -235,7 +253,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1a35c23ba9f33409bbfc52e1f50bf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  manager: {fileID: 0}
 --- !u!1 &127105331
 GameObject:
   m_ObjectHideFlags: 0
