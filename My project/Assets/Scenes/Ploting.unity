@@ -9194,7 +9194,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1210664599}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 476858473}
+        m_TargetAssemblyTypeName: StatEditor, Assembly-CSharp
+        m_MethodName: changeDeck
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1210664599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12588,25 +12600,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1093195535}
-        m_TargetAssemblyTypeName: GoToScene, Assembly-CSharp
-        m_MethodName: moveToParty
+      - m_Target: {fileID: 476858472}
+        m_TargetAssemblyTypeName: PlotElementControler, Assembly-CSharp
+        m_MethodName: openParty
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: GoToScene, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -12775,7 +12775,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1591375067}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1093195535}
+        m_TargetAssemblyTypeName: GoToScene, Assembly-CSharp
+        m_MethodName: moveToParty
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1591375067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14708,7 +14720,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1819238048}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 476858472}
+        m_TargetAssemblyTypeName: PlotElementControler, Assembly-CSharp
+        m_MethodName: closeParty
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1819238048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16099,7 +16123,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2020069543}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 476858473}
+        m_TargetAssemblyTypeName: StatEditor, Assembly-CSharp
+        m_MethodName: changeDeck
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2020069543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16755,7 +16791,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2071424288}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 476858473}
+        m_TargetAssemblyTypeName: StatEditor, Assembly-CSharp
+        m_MethodName: changeDeck
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2071424288
 MonoBehaviour:
   m_ObjectHideFlags: 0
