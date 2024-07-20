@@ -52,6 +52,16 @@ public class BattleManager : MonoBehaviour
             tempData.text = NPCs[i].getName();
             targetSelector.options.Add(tempData);
         }
+
+        setupNPCSprites();
+    }
+
+    private void setupNPCSprites() {
+        for (int i = 0; i < NPCs.Length; i++)
+        {
+            GameObject temp = Instantiate(NPCs[i].getSprite(), this.gameObject.transform);
+            temp.transform.localPosition = new Vector3(1 * (i - 1), 0, 0);
+        }
     }
 
     // Update is called once per frame
@@ -70,10 +80,10 @@ public class BattleManager : MonoBehaviour
     public void rotateArrow() {
         if (NPCs.Length == 3)
         {
-            arrow.transform.eulerAngles = new Vector3(0, 0, arrow.transform.eulerAngles.z + 90);
+            arrow.transform.eulerAngles = new Vector3(0, 0, arrow.transform.eulerAngles.z - 90);
         }
         else if (NPCs.Length == 2) {
-            arrow.transform.eulerAngles = new Vector3(0, 0, arrow.transform.eulerAngles.z + 120);
+            arrow.transform.eulerAngles = new Vector3(0, 0, arrow.transform.eulerAngles.z - 120);
         }
     }
 
