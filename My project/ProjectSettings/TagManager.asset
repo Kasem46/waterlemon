@@ -13,6 +13,7 @@ TagManager:
   - Map
   - Raid
   - Tavern
+  - Pinvite
   layers:
   - Default
   - TransparentFX

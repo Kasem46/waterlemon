@@ -35,6 +35,9 @@ public class GameManager : MonoBehaviour {
     //Energy cost Multiplyer
     double EnergyCostMultiplyer = 1;
 
+    //Deck Type
+    int deckType;
+
     /// <summary>
     /// Factions
     /// This varible is used to determine the player's faction
@@ -129,6 +132,9 @@ public class GameManager : MonoBehaviour {
     public double getEnergyCostMultiplyer(){
         return EnergyCostMultiplyer;
     }
+    public int getDeckType(){
+        return deckType;
+    }
 
     //Set Functions
     public void setInfluence(int newVal){
@@ -157,5 +163,8 @@ public class GameManager : MonoBehaviour {
     }
     public void setEnergyCostMultiplyer(double newVal){
         EnergyCostMultiplyer = newVal;
+    }
+    public void setDeckType(int newVal){
+        deckType = newVal;
     }
 }

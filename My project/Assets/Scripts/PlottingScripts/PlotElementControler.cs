@@ -21,6 +21,7 @@ public class PlotElementControler : MonoBehaviour {
     public GameObject NPCChooserObject;
     public GameObject NPCChooserButton;
     public GameObject NPCChooserButton2;
+    private GameObject[] Party;
     //Show/Hide main buttons    
     private void setMainButtons() {Buttons = GameObject.FindGameObjectsWithTag ("MainButtons");}
     public void hideMainButtons(){
@@ -202,6 +203,23 @@ public class PlotElementControler : MonoBehaviour {
         manager.setEgo(manager.getEgo() - Random.Range(5, 10));
         closeBribe();
     }
+
+    //Party Preping
+     public void openParty(){
+        hideMainButtons();
+        foreach(GameObject go in Party){
+            go.SetActive (true);
+        }
+    }
+    public void closeParty(){
+        foreach(GameObject go in Party){
+            go.SetActive (false);
+        }
+        showMainButtons();
+    }
+    private void setParty(){
+        Party = GameObject.FindGameObjectsWithTag ("Pinvite");
+    }
     // Start is called before the first frame update
     void Start(){
         test = FindObjectsOfType<GameManager>();
@@ -209,6 +227,7 @@ public class PlotElementControler : MonoBehaviour {
         NPCs = manager.getNPCArray();
         setMainButtons();
         setFactionBook();
+        setParty();
         setRaid();
         setMiror();
         setTavern();
@@ -217,7 +236,7 @@ public class PlotElementControler : MonoBehaviour {
         closeRaid();
         closeFactionBook();
         closeMiror();
-
+        closeParty();
     }
 
     // Update is called once per frame

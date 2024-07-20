@@ -50,6 +50,10 @@ public class StatEditor : MonoBehaviour{
         manager.setInfluence(manager.getInfluence() - Random.Range(1, 5));
     }
 
+    public void changeDeck(int Deck){
+        manager.setDeckType(Deck);
+    }
+
     // Update is called once per frame
     void Update()
     {
