@@ -114,6 +114,12 @@ public class PlotElementControler : MonoBehaviour {
         manager.setInfluence(manager.getDailyRecovery() + manager.getInfluence());
         showMainButtons();
     }
+    public void closeRaidInitial(){
+        foreach(GameObject go in Raid){
+            go.SetActive (false);
+        }
+        showMainButtons();
+    }
     private void setRaid(){
         Raid = GameObject.FindGameObjectsWithTag ("Raid");
     }
@@ -234,7 +240,7 @@ public class PlotElementControler : MonoBehaviour {
         setTavern();
         closeBribe();
         closeTavernInitial();
-        closeRaid();
+        closeRaidInitial();
         closeFactionBook();
         closeMiror();
         closeParty();

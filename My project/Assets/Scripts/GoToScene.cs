@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 
 public class GoToScene : MonoBehaviour {
+    public GameObject Audio;
     public void moveToPlotting(){
+        Destroy(Audio);
         SceneManager.LoadScene("Ploting");
     }
     public void moveToMainMenu(){

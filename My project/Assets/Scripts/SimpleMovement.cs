@@ -6,7 +6,7 @@ public class SimpleMovement : MonoBehaviour{
     public GameObject player;
     public GameObject exitButton;
     void start(){
-
+        
     }
 
     // Update is called once per frame

@@ -17,6 +17,7 @@ public class BattleManager : MonoBehaviour
     public Text battleLog;
     public Dropdown targetSelector;
     public TableManager table;
+    public GameObject Audio;
 
     private string battleLogText = "";
     [SerializeField]
@@ -33,6 +34,7 @@ public class BattleManager : MonoBehaviour
         try{
 
             table = GameObject.Find("table").GetComponent<TableManager>();
+            Audio = GameObject.Find("Audio Source");
             manager = GameObject.Find("GameManager").GetComponent<GameManager>();
         }catch {
             Debug.Log("Oopsie");
@@ -348,6 +350,7 @@ public class BattleManager : MonoBehaviour
         if (isPlayerTurn && buffer.Count == 0)
         {
             Destroy(table.gameObject);
+            Destroy(Audio.gameObject);
             SceneManager.LoadScene("Ploting");
         }
     }
