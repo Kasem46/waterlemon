@@ -114,6 +114,9 @@ public class GameManager : MonoBehaviour {
     public int getDay(){
         return day;
     }
+    public GenericNPC[] getNPCArray(){
+        return NPCs;
+    }
 
     //Set Functions
     public void setInfluence(int newVal){
