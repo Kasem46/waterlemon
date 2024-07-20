@@ -2556,6 +2556,7 @@ MonoBehaviour:
   Affront: {fileID: 1432059942}
   Gossip: {fileID: 1491611789}
   Poison: {fileID: 399054840}
+  handType: 1
 --- !u!1 &1537467128
 GameObject:
   m_ObjectHideFlags: 0

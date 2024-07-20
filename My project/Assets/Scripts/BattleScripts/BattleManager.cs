@@ -208,12 +208,12 @@ public class BattleManager : MonoBehaviour
             if (target == NPCs.Length)
             {
                 //NPC target player
-                manager.setInfluence(manager.getInfluence() - (int)((10f * (doerRiz / 100f))*((float)manager.getEgo()/100f)));
+                manager.setInfluence(manager.getInfluence() - (int)((10f * (doerRiz / 100f))*(100-(float)manager.getEgo()/100f)));
 
             }
             else {
                 //NPC target NPC
-                NPCs[target].setInfluence(NPCs[target].getInfluence() - (int)((10f * (doerRiz / 100f)) * ((float)NPCs[target].getEgo())/100f));
+                NPCs[target].setInfluence(NPCs[target].getInfluence() - (int)((10f * (doerRiz / 100f)) * (100-(float)NPCs[target].getEgo())/100f));
             }
 
         }
@@ -221,7 +221,7 @@ public class BattleManager : MonoBehaviour
             //Player target NPC
             manager.setEnergy(manager.getEnergy() - 10);
             manager.setFame(manager.getFame() - 5);
-            NPCs[target].setInfluence(NPCs[target].getInfluence() - (int)((10f * (doerRiz / 100f)) * ((float)NPCs[target].getEgo()/100f)));
+            NPCs[target].setInfluence(NPCs[target].getInfluence() - (int)((10f * (doerRiz / 100f)) * (100-(float)NPCs[target].getEgo()/100f)));
         }
     }
 
@@ -232,13 +232,13 @@ public class BattleManager : MonoBehaviour
             if (target == NPCs.Length)
             {
                 //NPC target player
-                manager.setInfluence(manager.getInfluence() + (int)((10f * (doerRiz / 100f)) * ((float)manager.getEgo() / 100f)));
+                manager.setInfluence(manager.getInfluence() + (int)((10f * (doerRiz / 100f)) * (100-(float)manager.getEgo() / 100f)));
 
             }
             else
             {
                 //NPC target NPC
-                NPCs[target].setInfluence(NPCs[target].getInfluence() + (int)((10f * (doerRiz / 100f)) * ((float)NPCs[target].getEgo()) / 100f));
+                NPCs[target].setInfluence(NPCs[target].getInfluence() + (int)((10f * (doerRiz / 100f)) * (100-(float)NPCs[target].getEgo()) / 100f));
             }
 
         }
@@ -247,7 +247,7 @@ public class BattleManager : MonoBehaviour
             //Player target NPC
             manager.setEnergy(manager.getEnergy() - 10);
             manager.setFame(manager.getFame() + 5);
-            NPCs[target].setInfluence(NPCs[target].getInfluence() + (int)((10f * (doerRiz / 100f)) * ((float)NPCs[target].getEgo() / 100f)));
+            NPCs[target].setInfluence(NPCs[target].getInfluence() + (int)((10f * (doerRiz / 100f)) * (100-(float)NPCs[target].getEgo() / 100f)));
         }
     }
 
@@ -258,13 +258,13 @@ public class BattleManager : MonoBehaviour
             if (target == NPCs.Length)
             {
                 //NPC target player
-                manager.setInfluence(manager.getInfluence() - (int)((20f * (doerRiz / 100f)) * ((float)manager.getEgo() / 100f)));
+                manager.setInfluence(manager.getInfluence() - (int)((20f * (doerRiz / 100f)) * (100-(float)manager.getEgo() / 100f)));
 
             }
             else
             {
                 //NPC target NPC
-                NPCs[target].setInfluence(NPCs[target].getInfluence() - (int)((20f * (doerRiz / 100f)) * ((float)NPCs[target].getEgo()) / 100f));
+                NPCs[target].setInfluence(NPCs[target].getInfluence() - (int)((20f * (doerRiz / 100f)) * (100-(float)NPCs[target].getEgo()) / 100f));
             }
 
         }
@@ -273,7 +273,7 @@ public class BattleManager : MonoBehaviour
             //Player target NPC
             manager.setEnergy(manager.getEnergy() - 20);
             manager.setFame(manager.getFame() - 10);
-            NPCs[target].setInfluence(NPCs[target].getInfluence() - (int)((20f * (doerRiz / 100f)) * ((float)NPCs[target].getEgo() / 100f)));
+            NPCs[target].setInfluence(NPCs[target].getInfluence() - (int)((20f * (doerRiz / 100f)) * (100-(float)NPCs[target].getEgo() / 100f)));
         }
     }
 
@@ -284,13 +284,13 @@ public class BattleManager : MonoBehaviour
             if (target == NPCs.Length)
             {
                 //NPC target player
-                manager.setInfluence(manager.getInfluence() - (int)((10f * (doerRiz / 100f)) * ((float)manager.getEgo() / 100f)));
-
+                manager.setInfluence(manager.getInfluence() - (int)((10f * (doerRiz / 100f)) * (100-(float)manager.getEgo() / 100f)));
+                
             }
             else
             {
                 //NPC target NPC
-                NPCs[target].setInfluence(NPCs[target].getInfluence() - (int)((10f * (doerRiz / 100f)) * ((float)NPCs[target].getEgo()) / 100f));
+                NPCs[target].setInfluence(NPCs[target].getInfluence() - (int)((10f * (doerRiz / 100f)) * (100-(float)NPCs[target].getEgo()) / 100f));
             }
 
         }
@@ -299,7 +299,7 @@ public class BattleManager : MonoBehaviour
             //Player target NPC
             manager.setEnergy(manager.getEnergy() - 15);
             manager.setFame(manager.getFame() + 10);
-            NPCs[target].setInfluence(NPCs[target].getInfluence() - (int)((10f * (doerRiz / 100f)) * ((float)NPCs[target].getEgo() / 100f)));
+            NPCs[target].setInfluence(NPCs[target].getInfluence() - (int)((10f * (doerRiz / 100f)) * (100-(float)NPCs[target].getEgo() / 100f)));
         }
     }
 
