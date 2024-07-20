@@ -145,8 +145,12 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update(){
-        
+        if (influence <= 0) {
+            SceneManager.LoadScene("Lose");
+        }  
     }
+
+
     void CreateNPC(int amount = 1, int faction = 0, int minInfluence = 0, int maxInfluence = 100, int minEgo = 0, int maxEgo = 100, int minRizz = 0, int maxRizz = 100, string CustomName = null){
         for (int j = 0; j < amount; j++){
             GenericNPC temp = ScriptableObject.CreateInstance<GenericNPC>();

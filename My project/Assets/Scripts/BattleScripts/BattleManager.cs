@@ -28,6 +28,13 @@ public class BattleManager : MonoBehaviour
     [SerializeField]
     private GameObject arrow;
 
+    [SerializeField]
+    private GameObject NPC1Render;
+    [SerializeField]
+    private GameObject NPC2Render;
+    [SerializeField]
+    private GameObject NPC3Render;
+
     //Start is called before the first frame update
     void Start()
     {
@@ -57,10 +64,19 @@ public class BattleManager : MonoBehaviour
     }
 
     private void setupNPCSprites() {
-        for (int i = 0; i < NPCs.Length; i++)
+        NPC1Render.SetActive(true);
+        NPC2Render.SetActive(true);
+        NPC3Render.SetActive(true);
+        if (NPCs.Length == 2)
         {
-            GameObject temp = Instantiate(NPCs[i].getSprite(), this.gameObject.transform);
-            temp.transform.localPosition = new Vector3(1 * (i - 1), 0, 0);
+            NPC1Render.GetComponent<Image>().sprite = NPCs[0].getSprite().GetComponent<SpriteRenderer>().sprite;
+            NPC3Render.GetComponent<Image>().sprite = NPCs[1].getSprite().GetComponent<SpriteRenderer>().sprite;
+            NPC2Render.SetActive(false);
+        }
+        else if (NPCs.Length == 3) {
+            NPC1Render.GetComponent<Image>().sprite = NPCs[0].getSprite().GetComponent<SpriteRenderer>().sprite;
+            NPC2Render.GetComponent<Image>().sprite = NPCs[1].getSprite().GetComponent<SpriteRenderer>().sprite;
+            NPC3Render.GetComponent<Image>().sprite = NPCs[2].getSprite().GetComponent<SpriteRenderer>().sprite;
         }
     }
 
