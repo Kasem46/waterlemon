@@ -150,6 +150,16 @@ public class BattleManager : MonoBehaviour
         int temp = Random.Range(0, NPCs.Length + 1);
         if (temp != NPCs.Length)
         {
+            if (action == 0 || action == 2) {
+                for (int i = 0; i < NPCs.Length; i++){
+                    temp = i;
+                    if (NPCs[temp].getFaction() == 4 && doer.getFaction() != 4) {
+                        return temp;
+                    }
+                }
+            
+            }
+
             if (NPCs[temp] == doer)
             {
                 temp = selectTarget(doer, action);

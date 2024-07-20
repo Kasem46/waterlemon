@@ -17,6 +17,8 @@ public class CardManager : MonoBehaviour
     [SerializeField]
     private int handType = 0;
 
+    private GameManager manager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +52,15 @@ public class CardManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        try
+        {
+            manager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        }
+        catch {
+            Debug.Log("card based oopsie");
+        
+        }
+        handType = manager.getDeckType();
         choseCardset(handType);
     }
 
@@ -73,7 +84,7 @@ public class CardManager : MonoBehaviour
 
         for (int i = 0; i < cardset.Length; i++) {
             cardset[i].SetActive(true);
-            cardset[i].transform.localPosition = new Vector3((i-1)*120,-178.5f,3.8f);
+            cardset[i].transform.localPosition = new Vector3((i-1)*120,-158.5f,3.8f);
         }
     }
 }
