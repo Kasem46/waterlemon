@@ -31,21 +31,28 @@ public class GenericNPC : ScriptableObject{
     public int getEgo(){
         return ego;
     }
+    public int getFaction(){
+        return faction;
+    }
 
     //Set Functions
 
     public void setName(string nam){
         name = nam;
     }
-    public void getInfluence(int inf){
+    public void setInfluence(int inf){
         influence = inf;
     }
-    public void getRizz(int riz){
+    public void setRizz(int riz){
         rizz = riz;
     }
-    public void getEgo(int eg){
+    public void setEgo(int eg){
         ego = eg;
     }
+    public void setFaction(int fac){
+        faction = fac;
+    }
+
 
 
 }

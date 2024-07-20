@@ -33,10 +33,10 @@ public class PlotElementControler : MonoBehaviour {
         foreach(GameObject go in FactionsArray2){
             go.SetActive (false);
         }
-        book.SetActive(false);
         showMainButtons();
     }
     private void setFactionBook(){
+        book.SetActive(false);
         FactionsArray1 = GameObject.FindGameObjectsWithTag ("FactionPage1");
         FactionsArray2 = GameObject.FindGameObjectsWithTag ("FactionPage2");
     }
@@ -75,7 +75,7 @@ public class PlotElementControler : MonoBehaviour {
     private void setMiror(){
         Miror = GameObject.FindGameObjectsWithTag ("Miror");
     }
-
+    
     // Start is called before the first frame update
     void Start(){
         setMainButtons();

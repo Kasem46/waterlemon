@@ -30,7 +30,7 @@ public class StatEditor : MonoBehaviour{
 
     public void changeEgo(){
         if (manager.getEgo() == 100){
-            //Todo: Add text saying Rizz can't be any higher
+            //Todo: Add text saying Ego can't be any higher
             Debug.Log("Can't go any higher");
         } else {
             manager.setEgo(manager.getEgo() + Random.Range(1, 10));
