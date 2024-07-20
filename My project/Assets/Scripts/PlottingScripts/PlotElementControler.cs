@@ -42,6 +42,7 @@ public class PlotElementControler : MonoBehaviour {
         foreach(GameObject go in FactionsArray3){
             go.SetActive (false);
         }
+        book.SetActive(false);
         showMainButtons();
     }
     private void setFactionBook(){
