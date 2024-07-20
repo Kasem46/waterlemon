@@ -30,7 +30,7 @@ public class TableManager : MonoBehaviour
     void populateSprites() {
         for (int i = 0; i < NPCS.Length; i++) {
             GameObject temp = Instantiate(NPCS[i].getSprite(), this.gameObject.transform);
-            temp.transform.position = new Vector3(2*(i - 1), 0, 0);
+            temp.transform.localPosition = new Vector3(1*(i - 1), 0, 0);
         }
     }
 
