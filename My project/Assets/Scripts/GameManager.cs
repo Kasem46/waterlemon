@@ -7,7 +7,8 @@ public class GameManager : MonoBehaviour {
 
     //CreateNPC array
     public GenericNPC[] NPCs = new GenericNPC[18];
-    //NPC names, current amount: 11
+    public int NumNPCs = 0;
+    //NPC names, 
     string[] NPCNames  = new string[] {"Edmund", "Alistair", "Leopold", "Maximus", "Darian", "Aricor", "Everard", "Romarian", "Percival Magnus", "Amara", "Gwendolyn", "Emmaline", "Isadora", "Victoria", "Gabriella", "Matilda Gracebourne", "Regalis", "Thaddeus"};
     string[] NPCLastNames = new string[] {"Octavius", "VII", "Bartholomew", "Thorne", "Blackthorne", "IX", "the Resplendent", "IV", "II", "Starlight", "Valentina", "Esmeralda", "Ravenshield", "Somerset", "III", "XII", "Stormbreaker", "the Great"};
     private string name;
@@ -49,10 +50,36 @@ public class GameManager : MonoBehaviour {
     // Start is called before the first frame update
     void Start(){
         DontDestroyOnLoad(this.gameObject);
-        //Unique NPCS
-        //General
-        CreateNPC(18);
-        
+        //Create Royal Faction NPCs + Leader
+        CreateNPC(2, 1, 50, 100, 30, 70, 30, 70);
+        NumNPCs += 2;
+        CreateNPC(1, 1, 60, 110, 40, 80, 40, 80, "Regent " + NPCNames[Random.Range(0, NPCNames.Length)] + " " + NPCLastNames[Random.Range(0, NPCNames.Length)]);
+        NumNPCs += 1;
+        //Create Church Faction NPCs
+        CreateNPC(2, 2, 50, 100, 30, 70, 0, 50);
+        NumNPCs += 2;
+        CreateNPC(1, 2, 60, 110, 40, 80, 10, 60, "High Priest " + NPCNames[Random.Range(0, NPCNames.Length)] + " " + NPCLastNames[Random.Range(0, NPCNames.Length)]);
+        NumNPCs += 1;
+        //Create Populist Faction NPCs
+        CreateNPC(2, 3, 0, 50, 50, 100, 30, 70);
+        NumNPCs += 2;
+        CreateNPC(1, 3, 10, 60, 60, 110, 40, 80, NPCNames[Random.Range(0, NPCNames.Length)] + " the Strongman");
+        NumNPCs += 1;
+        //Create Peasant Faction NPCs
+        CreateNPC(2, 4, 0, 50, 0, 50, 0, 50);
+        NumNPCs += 2;
+        CreateNPC(1, 4, 10, 60, 10, 60, 10, 60, NPCNames[Random.Range(0, NPCNames.Length)] + " the Wandought" );
+        NumNPCs += 1;
+        //Create Merchant Faction NPCs
+        CreateNPC(2, 5, 30, 70, 30, 70, 50, 100);
+        NumNPCs += 2;
+        CreateNPC(1, 5, 40, 80, 40, 80, 60, 110, NPCNames[Random.Range(0, NPCNames.Length)] + " the Gentry");
+        NumNPCs += 1;
+        //Create Military Faction NPCs
+        CreateNPC(2, 6, 50, 100, 30, 70, 0, 50);
+        NumNPCs += 2;
+        CreateNPC(1, 6, 60, 110, 40, 80, 10, 60, "General " + NPCNames[Random.Range(0, NPCNames.Length)] + " " + NPCLastNames[Random.Range(0, NPCNames.Length)]);
+        NumNPCs += 1;
     }
 
     // Update is called once per frame
@@ -74,7 +101,7 @@ public class GameManager : MonoBehaviour {
                 name = CustomName;
             }
             temp.e(Random.Range(minInfluence, maxInfluence), Random.Range(minEgo, maxEgo), Random.Range(minRizz, maxRizz), faction, name);
-            NPCs[j] = temp;
+            NPCs[j + NumNPCs] = temp;
         }
     }
     
