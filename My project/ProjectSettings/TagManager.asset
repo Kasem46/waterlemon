@@ -12,6 +12,7 @@ TagManager:
   - FactionPage3
   - Map
   - Raid
+  - Tavern
   layers:
   - Default
   - TransparentFX

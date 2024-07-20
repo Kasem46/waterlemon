@@ -15,6 +15,8 @@ public class PlotElementControler : MonoBehaviour {
     private GameObject[] Buttons;
     private GameObject[] Miror;
     private GameObject[] Raid;
+    private GameObject[] Tavern;
+    public Dropdown NPCChooser;
     //Show/Hide main buttons    
     private void setMainButtons() {Buttons = GameObject.FindGameObjectsWithTag ("MainButtons");}
     public void hideMainButtons(){
@@ -132,6 +134,47 @@ public class PlotElementControler : MonoBehaviour {
         Miror = GameObject.FindGameObjectsWithTag ("Miror");
     }
 
+
+    //Tavern Toggles
+    public void openTavern(){
+        hideMainButtons();
+        PopulateDropdown(NPCChooser, NPCs);
+        foreach(GameObject go in Tavern){
+            go.SetActive (true);
+        }
+    }
+    public void closeTavern(){
+        foreach(GameObject go in Tavern){
+            go.SetActive (false);
+        }
+        manager.setDay(manager.getDay() + 1);
+        manager.setInfluence(manager.getDailyRecovery() + manager.getInfluence());
+        showMainButtons();
+    }
+    public void closeTavernInitial(){
+        foreach(GameObject go in Tavern){
+            go.SetActive (false);
+        }
+    }
+    private void setTavern(){
+        Tavern = GameObject.FindGameObjectsWithTag ("Tavern");
+    }
+    //Populate Tavern dropdown with NPCs
+    void PopulateDropdown (Dropdown dropdown, GenericNPC[] optionsArray) {
+        List<string> options = new List<string> ();
+        foreach (var option in optionsArray) {
+            options.Add(option.getName());
+        }
+        dropdown.ClearOptions ();
+        dropdown.AddOptions(options);
+    }
+    //On Dropdown Activation
+    public void dropdownSelection(){
+        int a = NPCChooser.value;
+        GenericNPC Egochange = NPCs[a]; 
+        Egochange.setEgo(Egochange.getEgo() - Random.Range(5, 10));
+        closeTavern();
+    }
     // Start is called before the first frame update
     void Start(){
         test = FindObjectsOfType<GameManager>();
@@ -141,9 +184,12 @@ public class PlotElementControler : MonoBehaviour {
         setFactionBook();
         setRaid();
         setMiror();
+        setTavern();
+        closeTavernInitial();
         closeRaid();
         closeFactionBook();
         closeMiror();
+
     }
 
     // Update is called once per frame

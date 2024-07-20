@@ -41,6 +41,15 @@ public class StatEditor : MonoBehaviour{
         }
     }
 
+    public void changeECM(){
+        manager.setEnergyCostMultiplyer(manager.getEnergyCostMultiplyer() * 0.7);
+        manager.setInfluence(manager.getInfluence() - Random.Range(1, 5));
+    }
+    public void changeEnergy(){
+        manager.setEnergy(manager.getEnergy() + 10);
+        manager.setInfluence(manager.getInfluence() - Random.Range(1, 5));
+    }
+
     // Update is called once per frame
     void Update()
     {

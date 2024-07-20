@@ -12,8 +12,8 @@ public class GameManager : MonoBehaviour {
     private int dailyRecoverPercent = 5;
 
     //NPC names, 
-    string[] NPCNames  = new string[] {"Edmund", "Alistair", "Leopold", "Maximus", "Darian", "Aricor", "Everard", "Romarian", "Percival Magnus", "Amara", "Gwendolyn", "Emmaline", "Isadora", "Victoria", "Gabriella", "Matilda Gracebourne", "Regalis", "Thaddeus"};
-    string[] NPCLastNames = new string[] {"Octavius", "VII", "Bartholomew", "Thorne", "Blackthorne", "IX", "the Resplendent", "IV", "II", "Starlight", "Valentina", "Esmeralda", "Ravenshield", "Somerset", "III", "XII", "Stormbreaker", "the Great"};
+    string[] NPCNames  = new string[] {"Edmund", "Alistair", "Leopold", "Maximus", "Darian", "Aricor", "Everard", "Romarian", "Percival Magnus", "Amara", "Gwendolyn", "Emmaline", "Isadora", "Victoria", "Gabriella", "Matilda Gracebourne", "Regalis", "Thaddeus", "Arghun"};
+    string[] NPCLastNames = new string[] {"Octavius", "VII", "Bartholomew", "Thorne", "Blackthorne", "IX", "the Resplendent", "IV", "II", "Starlight", "Valentina", "Esmeralda", "Ravenshield", "Somerset", "III", "XII", "Stormbreaker", "the Great", "the Annihilator"};
     private string name;
     //Day
     int day = -1;
@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour {
 
     //Charisma
     int rizz;
+    
+    //Energy cost Multiplyer
+    double EnergyCostMultiplyer = 1;
 
     /// <summary>
     /// Factions
@@ -123,6 +126,9 @@ public class GameManager : MonoBehaviour {
     public int getDailyRecovery(){
         return dailyRecoverPercent;
     }
+    public double getEnergyCostMultiplyer(){
+        return EnergyCostMultiplyer;
+    }
 
     //Set Functions
     public void setInfluence(int newVal){
@@ -148,5 +154,8 @@ public class GameManager : MonoBehaviour {
     }
     public void SetDailyRecovery(int newVal){
         dailyRecoverPercent = newVal;
+    }
+    public void setEnergyCostMultiplyer(double newVal){
+        EnergyCostMultiplyer = newVal;
     }
 }
