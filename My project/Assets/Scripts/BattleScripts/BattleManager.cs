@@ -116,6 +116,7 @@ public class BattleManager : MonoBehaviour
                     setBattleText("Player Gossiped About " + target.getName());
                     break;
                 case 4:
+                    poison(targetSelector.value,(float)manager.getRizz());
                     setBattleText("Player Poisoned " + target.getName());
                     break;
                 default:
@@ -300,6 +301,22 @@ public class BattleManager : MonoBehaviour
             manager.setFame(manager.getFame() + 10);
             NPCs[target].setInfluence(NPCs[target].getInfluence() - (int)((10f * (doerRiz / 100f)) * ((float)NPCs[target].getEgo() / 100f)));
         }
+    }
+
+    public void poison(int target,float doerRiz) { 
+        manager.setEnergy(manager.getEnergy() - 20);
+        int successChance = Random.Range(1, 101);
+        if ((float)successChance <= doerRiz)
+        {
+            NPCs[target].setEgo(NPCs[target].getEgo() - 15);
+            NPCs[target].setRizz(NPCs[target].getRizz() - 15);
+            setBattleText("Poisoning Succeeded");
+        }
+        else {
+            setBattleText("Poisoning Failed");
+        }
+        manager.setFame(manager.getFame() - 20);
+        
     }
 
     public void LEAVE() {
