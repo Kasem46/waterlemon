@@ -14,6 +14,7 @@ public class PlotElementControler : MonoBehaviour {
     private GameObject[] FactionsArray3;
     private GameObject[] Buttons;
     private GameObject[] Miror;
+    private GameObject[] Raid;
     //Show/Hide main buttons    
     private void setMainButtons() {Buttons = GameObject.FindGameObjectsWithTag ("MainButtons");}
     public void hideMainButtons(){
@@ -90,8 +91,31 @@ public class PlotElementControler : MonoBehaviour {
         }
     }
 
-    //Mirror Toggles
+    //Raid Toggles
 
+    public void openRaid(){
+        hideMainButtons();
+        foreach(GameObject go in Raid){
+            go.SetActive (true);
+        }
+    }
+    public void closeRaid(){
+        foreach(GameObject go in Raid){
+            go.SetActive (false);
+        }
+        manager.setDay(manager.getDay() + 1);
+        manager.setInfluence(manager.getDailyRecovery() + manager.getInfluence());
+        showMainButtons();
+    }
+    private void setRaid(){
+        Raid = GameObject.FindGameObjectsWithTag ("Raid");
+    }
+    //Function to reset UI elements in case of draw
+    public void resetRaid(){
+        closeRaid();
+        openRaid();
+    }
+    //Mirror Toggles
     public void openMiror(){
         hideMainButtons();
         foreach(GameObject go in Miror){
@@ -115,7 +139,9 @@ public class PlotElementControler : MonoBehaviour {
         NPCs = manager.getNPCArray();
         setMainButtons();
         setFactionBook();
+        setRaid();
         setMiror();
+        closeRaid();
         closeFactionBook();
         closeMiror();
     }

@@ -18,10 +18,17 @@ public class MapControl : MonoBehaviour{
         mapParts = GameObject.FindGameObjectsWithTag ("Map");
     }
 
+    public void hideMapInitial(){
+        foreach(GameObject go in mapParts){
+            go.SetActive (false);
+        }
+    }
     public void hideMap(){
         foreach(GameObject go in mapParts){
             go.SetActive (false);
         }
+        manager.setDay(manager.getDay() + 1);
+        manager.setInfluence(manager.getDailyRecovery() + manager.getInfluence());
     }
     public void showMap(){
         foreach(GameObject go in mapParts){
@@ -54,10 +61,12 @@ public class MapControl : MonoBehaviour{
             delete = GameObject.Find(factionName);
             delete.SetActive(false);
             manager.setFame(manager.getFame() - 60);
+            manager.SetDailyRecovery(manager.getDailyRecovery() + 5);
         } else if (NPCs[0 + factionNumber * 3].getInfluence() + NPCs[1 + factionNumber * 3].getInfluence() + NPCs[1 + factionNumber * 3].getInfluence() <= 30 && manager.getFame() <= -80 && vassalMode == false) {
             delete = GameObject.Find(factionName);
             delete.SetActive(false);
             manager.setFame(manager.getFame() - 60);
+            manager.SetDailyRecovery(manager.getDailyRecovery() + 5);
         }
     }
 
@@ -75,10 +84,10 @@ public class MapControl : MonoBehaviour{
     // Start is called before the first frame update
     void Start(){
         setMap();
-        hideMap();
         test = FindObjectsOfType<GameManager>();
         manager = test[0];
         NPCs = manager.getNPCArray();
+        hideMapInitial();
     }
 
     // Update is called once per frame

@@ -11,6 +11,7 @@ TagManager:
   - Miror
   - FactionPage3
   - Map
+  - Raid
   layers:
   - Default
   - TransparentFX
