@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BattleManager : MonoBehaviour
 {
@@ -103,6 +104,7 @@ public class BattleManager : MonoBehaviour
                     setBattleText("Player Insulted " + target.getName());
                     break;
                 case 1:
+                    complement(targetSelector.value, false, (float)manager.getRizz());
                     setBattleText("Player Complemented " + target.getName());
                     break;
                 case 2:
@@ -182,6 +184,7 @@ public class BattleManager : MonoBehaviour
                 insult(target, true, (float)doer.getRizz());
                 return " Insulted " + targetName;
             case 1:
+                complement(target, true, (float)doer.getRizz());
                 return " complemented " + targetName;
             case 2:
                 return " affronted " + targetName;
@@ -212,7 +215,42 @@ public class BattleManager : MonoBehaviour
         else {
             //Player target NPC
             manager.setEnergy(manager.getEnergy() - 10);
+            manager.setFame(manager.getFame() - 5);
             NPCs[target].setInfluence(NPCs[target].getInfluence() - (int)((10f * (doerRiz / 100f)) * ((float)NPCs[target].getEgo()/100f)));
+        }
+    }
+
+    public void complement(int target, bool NPC, float doerRiz)
+    {
+        if (NPC)
+        {
+            if (target == NPCs.Length)
+            {
+                //NPC target player
+                manager.setInfluence(manager.getInfluence() + (int)((10f * (doerRiz / 100f)) * ((float)manager.getEgo() / 100f)));
+
+            }
+            else
+            {
+                //NPC target NPC
+                NPCs[target].setInfluence(NPCs[target].getInfluence() + (int)((10f * (doerRiz / 100f)) * ((float)NPCs[target].getEgo()) / 100f));
+            }
+
+        }
+        else
+        {
+            //Player target NPC
+            manager.setEnergy(manager.getEnergy() - 10);
+            manager.setFame(manager.getFame() + 5);
+            NPCs[target].setInfluence(NPCs[target].getInfluence() + (int)((10f * (doerRiz / 100f)) * ((float)NPCs[target].getEgo() / 100f)));
+        }
+    }
+
+    public void LEAVE() {
+        if (isPlayerTurn && buffer.Count == 0)
+        {
+            Destroy(table.gameObject);
+            SceneManager.LoadScene("Ploting");
         }
     }
 }
