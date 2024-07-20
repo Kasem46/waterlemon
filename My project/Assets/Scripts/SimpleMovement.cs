@@ -17,7 +17,7 @@ public class SimpleMovement : MonoBehaviour{
         if (Input.GetKey(KeyCode.LeftShift)){
             speed /= 2;
         }
-        if (Input.GetKey("d") && player.transform.position.x < 33.30029f){
+        if (Input.GetKey("d") && player.transform.position.x < 31.80383){
             transform.position = new Vector3(player.transform.position.x + a, -2.93f, 0f);
         } else if (Input.GetKey("a") && player.transform.position.x > -8.340001f){
             transform.position = new Vector3(player.transform.position.x -a, -2.93f, 0f);

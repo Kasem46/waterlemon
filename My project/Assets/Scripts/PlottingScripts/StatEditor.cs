@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class StatEditor : MonoBehaviour{
 
@@ -8,6 +9,7 @@ public class StatEditor : MonoBehaviour{
     // Start is called before the first frame update
     public GameManager[] test;
     public GameManager manager;
+    public GameObject finalButton;
     void Start(){
         //Find GameManager
         test = FindObjectsOfType<GameManager>();
@@ -52,6 +54,14 @@ public class StatEditor : MonoBehaviour{
 
     public void changeDeck(int Deck){
         manager.setDeckType(Deck);
+    }
+    public void checkDeck(){
+        if(manager.getDeckType() == -1){
+            finalButton.SetActive(false);
+            finalButton.SetActive(true);
+        } else {
+            SceneManager.LoadScene("Party");
+        }
     }
 
     // Update is called once per frame

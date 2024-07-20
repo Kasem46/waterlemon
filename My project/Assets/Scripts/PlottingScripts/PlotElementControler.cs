@@ -207,6 +207,7 @@ public class PlotElementControler : MonoBehaviour {
     //Party Preping
      public void openParty(){
         hideMainButtons();
+        manager.setDeckType(-1);
         foreach(GameObject go in Party){
             go.SetActive (true);
         }
