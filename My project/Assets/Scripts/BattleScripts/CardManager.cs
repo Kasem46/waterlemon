@@ -14,6 +14,9 @@ public class CardManager : MonoBehaviour
     private GameObject[] cardset2;
     private GameObject[] cardset3;
 
+    [SerializeField]
+    private int handType = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +50,7 @@ public class CardManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        choseCardset(0);
+        choseCardset(handType);
     }
 
     void choseCardset(int set) {
