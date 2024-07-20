@@ -8,6 +8,9 @@ public class GameManager : MonoBehaviour {
     //CreateNPC array
     public GenericNPC[] NPCs = new GenericNPC[18];
     public int NumNPCs = 0;
+    //Define influence recovery varibles
+    private int dailyRecoverPercent = 5;
+
     //NPC names, 
     string[] NPCNames  = new string[] {"Edmund", "Alistair", "Leopold", "Maximus", "Darian", "Aricor", "Everard", "Romarian", "Percival Magnus", "Amara", "Gwendolyn", "Emmaline", "Isadora", "Victoria", "Gabriella", "Matilda Gracebourne", "Regalis", "Thaddeus"};
     string[] NPCLastNames = new string[] {"Octavius", "VII", "Bartholomew", "Thorne", "Blackthorne", "IX", "the Resplendent", "IV", "II", "Starlight", "Valentina", "Esmeralda", "Ravenshield", "Somerset", "III", "XII", "Stormbreaker", "the Great"};
@@ -46,8 +49,8 @@ public class GameManager : MonoBehaviour {
     void Start(){
         DontDestroyOnLoad(this.gameObject);
         //Stats randomization
-        influence = Random.Range(30, 50);
-        fame = Random.Range(30, 50);
+        influence = Random.Range(100, 100);
+        fame = Random.Range(100, 100);
         ego = Random.Range(30, 50);
         rizz = Random.Range(30, 50);
         //Create Royal Faction NPCs
@@ -117,6 +120,9 @@ public class GameManager : MonoBehaviour {
     public GenericNPC[] getNPCArray(){
         return NPCs;
     }
+    public int getDailyRecovery(){
+        return dailyRecoverPercent;
+    }
 
     //Set Functions
     public void setInfluence(int newVal){
@@ -139,5 +145,8 @@ public class GameManager : MonoBehaviour {
     }
     public void setDay(int newVal){
         day = newVal;
+    }
+    public void SetDailyRecovery(int newVal){
+        dailyRecoverPercent = newVal;
     }
 }

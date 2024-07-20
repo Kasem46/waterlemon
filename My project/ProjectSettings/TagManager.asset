@@ -10,6 +10,7 @@ TagManager:
   - GameManager
   - Miror
   - FactionPage3
+  - Map
   layers:
   - Default
   - TransparentFX
