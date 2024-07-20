@@ -51,6 +51,7 @@ public class ControlVaribles : MonoBehaviour{
                 egoText = GameObject.Find("Text (Legacy) (3)").GetComponent<Text> ();
                 day = GameObject.Find("Text (Legacy) (5)").GetComponent<Text> ();
                 manager.setDay(manager.getDay() + 1);
+                manager.setInfluence(manager.getDailyRecovery() + manager.getInfluence());
             } catch {
 
             }
