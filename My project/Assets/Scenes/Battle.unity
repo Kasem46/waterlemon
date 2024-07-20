@@ -2865,6 +2865,7 @@ GameObject:
   - component: {fileID: 2034118299}
   - component: {fileID: 2034118301}
   - component: {fileID: 2034118300}
+  - component: {fileID: 2034118302}
   m_Layer: 5
   m_Name: Battle Anounce thingy
   m_TagString: Untagged
@@ -2889,8 +2890,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -13.047363, y: 4.4423523}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: -0}
+  m_SizeDelta: {x: 393.9072, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2034118300
 MonoBehaviour:
@@ -2934,6 +2935,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2034118298}
   m_CullTransparentMesh: 1
+--- !u!114 &2034118302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034118298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6d11cb9bb789ec54bb75694fe6d4651c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
 --- !u!1 &2064558610
 GameObject:
   m_ObjectHideFlags: 0

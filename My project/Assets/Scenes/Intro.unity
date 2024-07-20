@@ -169,6 +169,7 @@ MonoBehaviour:
   egoText: {fileID: 0}
   rizzText: {fileID: 0}
   energyText: {fileID: 0}
+  day: {fileID: 0}
 --- !u!114 &30365582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -200,6 +201,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  NumNPCs: 0
   fame: 100
 --- !u!224 &30365583
 RectTransform:
@@ -233,6 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1a35c23ba9f33409bbfc52e1f50bf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 0}
 --- !u!1 &127105331
 GameObject:
   m_ObjectHideFlags: 0
@@ -488,7 +491,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 30365584}
         m_TargetAssemblyTypeName: GoToScene, Assembly-CSharp
-        m_MethodName: moveToParty
+        m_MethodName: moveToPlotting
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

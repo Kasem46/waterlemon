@@ -16,6 +16,11 @@ public class BattleManager : MonoBehaviour
     public Dropdown targetSelector;
     public TableManager table;
 
+    private string battleLogText = "";
+    [SerializeField]
+    private float timer = 3;
+    [SerializeField]
+    private List<GameObject> buffer = new List<GameObject>();
 
     //Start is called before the first frame update
     void Start()
@@ -54,8 +59,33 @@ public class BattleManager : MonoBehaviour
     //Gossip - 3
     //Poison - 4
 
-    public void updateUI() { 
-        
+    public void updateUI() {
+        if (timer <= 0 && buffer.Count > 0)
+        {
+            GameObject temp = buffer[0];
+            buffer.RemoveAt(0);
+            temp.SetActive(true);
+            temp.GetComponent<BattleLogMover>().setIsCopy(true);
+            timer = 3;
+        }
+        else {
+            timer -= Time.deltaTime;
+        }
+    }
+
+    public void setBattleText(string text) {
+        this.battleLogText = text;
+
+        battleLog.text = battleLogText;
+
+        GameObject temp = battleLog.gameObject;
+        temp = Instantiate(temp,this.gameObject.transform);
+        temp.SetActive(false);
+        pushToBuffer(temp);
+
+    }
+    public void pushToBuffer(GameObject a) { 
+        buffer.Add(a);
     }
 
     public void playerAction(int type) {
@@ -65,19 +95,19 @@ public class BattleManager : MonoBehaviour
             switch (type)
             {
                 case 0:
-                    Debug.Log("Insulted");
+                    setBattleText("Player Insulted " + target.getName());
                     break;
                 case 1:
-                    Debug.Log("Complemented");
+                    setBattleText("Player Complemented " + target.getName());
                     break;
                 case 2:
-                    Debug.Log("Affronted");
+                    setBattleText("Player Affronted " + target.getName()); 
                     break;
                 case 3:
-                    Debug.Log("Gossiped About");
+                    setBattleText("Player Gossiped About " + target.getName());
                     break;
                 case 4:
-                    Debug.Log("Poisoned");
+                    setBattleText("Player Poisoned " + target.getName());
                     break;
                 default:
                     Debug.Log("invalid player option");
@@ -96,7 +126,7 @@ public class BattleManager : MonoBehaviour
     public void NPCturn() {
         //NPCs all pick options
         foreach (GenericNPC person in NPCs) {
-            Debug.Log("NPC turn");
+            setBattleText(person.getName() + " did something");
         }
         endRound();
     }
