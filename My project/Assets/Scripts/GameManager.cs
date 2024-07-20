@@ -49,8 +49,8 @@ public class GameManager : MonoBehaviour {
     void Start(){
         DontDestroyOnLoad(this.gameObject);
         //Stats randomization
-        influence = Random.Range(30, 50);
-        fame = Random.Range(30, 50);
+        influence = Random.Range(100, 100);
+        fame = Random.Range(100, 100);
         ego = Random.Range(30, 50);
         rizz = Random.Range(30, 50);
         //Create Royal Faction NPCs
