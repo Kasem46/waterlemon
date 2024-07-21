@@ -37,10 +37,13 @@ public class TableManager : MonoBehaviour
     void randomiseNPCs() {
         for (int i = 0; i < NPCS.Length; i++) {
             NPCS[i] = thing.NPCs[Random.Range(0, 18)];
+            if (NPCS[i].isDead() == true) {
+                randomiseNPCs();
+            }
         }
         for (int i = 0; i < NPCS.Length; i++) {
             for (int j = 0; j < NPCS.Length; j++) {
-                if (i != j && NPCS[i] == NPCS[j]) {
+                if ((i != j && NPCS[i] == NPCS[j])) {
                     randomiseNPCs();
                 }
             }
