@@ -9,6 +9,9 @@ public class GenericNPC : ScriptableObject{
     private int faction;
     private string name;
     private GameObject sprite;
+
+    private bool dead = true;
+
     public void e(int inf = 0, int eg = 0, int riz = 0, int fac = 0, string nam = "UNNAMED"){
         influence = inf;
         ego = eg;
@@ -38,6 +41,9 @@ public class GenericNPC : ScriptableObject{
     public int getFaction(){
         return faction;
     }
+    public bool isDead(){
+        return dead;
+    }
 
     //Set Functions
 
@@ -59,6 +65,9 @@ public class GenericNPC : ScriptableObject{
 
     public void setSprite(GameObject sp) {
         sprite = sp;
+    }
+    public void setDead(bool d) {
+        dead = d;
     }
 
 
