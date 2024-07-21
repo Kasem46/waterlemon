@@ -12,6 +12,18 @@ public class MapControl : MonoBehaviour{
     public Text tips;
     public Text mode;
     private bool vassalMode = true;
+    public GameObject Kings;
+    public GameObject Church;
+    public GameObject Popu;
+    public GameObject Peas;
+    public GameObject Merch;
+    public GameObject Mil;
+    public GameObject KingsB;
+    public GameObject ChurchB;
+    public GameObject PopuB;
+    public GameObject PeasB;
+    public GameObject MerchB;
+    public GameObject MilB;
 
     //Set map
     public void setMap(){
@@ -33,6 +45,30 @@ public class MapControl : MonoBehaviour{
     public void showMap(){
         foreach(GameObject go in mapParts){
             go.SetActive (true);
+        }
+        if (manager.getFactionDefeated(0) == true){
+            Kings.SetActive(true);
+            KingsB.SetActive(false);
+        }
+        if (manager.getFactionDefeated(1) == true){
+            Church.SetActive(true);
+            ChurchB.SetActive(false);
+        }
+        if (manager.getFactionDefeated(2) == true){
+            Popu.SetActive(true);
+            PopuB.SetActive(false);
+        }
+        if (manager.getFactionDefeated(3) == true){
+            Peas.SetActive(true);
+            PeasB.SetActive(false);
+        }
+        if (manager.getFactionDefeated(4) == true){
+            Merch.SetActive(true);
+            MerchB.SetActive(false);
+        }
+        if (manager.getFactionDefeated(5) == true){
+            Mil.SetActive(true);
+            MilB.SetActive(false);
         }
     }
 
@@ -56,19 +92,63 @@ public class MapControl : MonoBehaviour{
         Vassalize("Merchant", 4);
     }
 
-    private void Vassalize(string factionName, int factionNumber){
+    private bool Vassalize(string factionName, int factionNumber){
         if(NPCs[0 + factionNumber * 3].getInfluence() + NPCs[1 + factionNumber * 3].getInfluence() + NPCs[2 + factionNumber * 3].getInfluence() >= 270 && manager.getFame() >= 80 && vassalMode == true){
             delete = GameObject.Find(factionName);
             delete.SetActive(false);
             manager.setFame(manager.getFame() - 60);
             manager.SetDailyRecovery(manager.getDailyRecovery() + 5);
             manager.setDefeatedFactions(manager.getDefeatedFactions() + 1);
+            manager.setFactionsDefeated(factionNumber, true);
+            if (manager.getFactionDefeated(0) == true){
+                Kings.SetActive(true);
+            }
+            if (manager.getFactionDefeated(1) == true){
+                Church.SetActive(true);
+            }
+            if (manager.getFactionDefeated(2) == true){
+                Popu.SetActive(true);
+            }
+            if (manager.getFactionDefeated(3) == true){
+                Peas.SetActive(true);
+            }
+            if (manager.getFactionDefeated(4) == true){
+                Merch.SetActive(true);
+            }
+            if (manager.getFactionDefeated(5) == true){
+                Mil.SetActive(true);
+            }
+            return true;
+            setMap();
         } else if (NPCs[0 + factionNumber * 3].getInfluence() + NPCs[1 + factionNumber * 3].getInfluence() + NPCs[2 + factionNumber * 3].getInfluence() <= 30 && manager.getFame() <= -80 && vassalMode == false) {
             delete = GameObject.Find(factionName);
             delete.SetActive(false);
             manager.setFame(manager.getFame() - 60);
             manager.SetDailyRecovery(manager.getDailyRecovery() + 5);
             manager.setDefeatedFactions(manager.getDefeatedFactions() + 1);
+            manager.setFactionsDefeated(factionNumber, true);
+            if (manager.getFactionDefeated(0) == true){
+                Kings.SetActive(true);
+            }
+            if (manager.getFactionDefeated(1) == true){
+                Church.SetActive(true);
+            }
+            if (manager.getFactionDefeated(2) == true){
+                Popu.SetActive(true);
+            }
+            if (manager.getFactionDefeated(3) == true){
+                Peas.SetActive(true);
+            }
+            if (manager.getFactionDefeated(4) == true){
+                Merch.SetActive(true);
+            }
+            if (manager.getFactionDefeated(5) == true){
+                Mil.SetActive(true);
+            }
+            return true;
+            setMap();
+        } else {
+            return false;
         }
     }
 
@@ -93,8 +173,7 @@ public class MapControl : MonoBehaviour{
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
+    void Update(){
+
     }
 }

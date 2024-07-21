@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour {
     string[] NPCNames  = new string[] {"Edmund", "Alistair", "Leopold", "Maximus", "Darian", "Aricor", "Everard", "Romarian", "Percival Magnus", "Amara", "Gwendolyn", "Emmaline", "Isadora", "Victoria", "Gabriella", "Matilda Gracebourne", "Regalis", "Thaddeus", "Arghun"};
     string[] NPCLastNames = new string[] {"Octavius", "VII", "Bartholomew", "Thorne", "Blackthorne", "IX", "the Resplendent", "IV", "II", "Starlight", "Valentina", "Esmeralda", "Ravenshield", "Somerset", "III", "XII", "Stormbreaker", "the Great", "the Annihilator"};
     private string name;
+    bool[] FactionsDefeated = new bool[] {false, false, false, false, false, false};
     //Day
     int day = -1;
     //Influence
@@ -96,8 +97,10 @@ public class GameManager : MonoBehaviour {
     void Start(){
         DontDestroyOnLoad(this.gameObject);
         //Stats randomization
-        influence = Random.Range(30, 50);
-        fame = Random.Range(30, 50);
+        //influence = Random.Range(30, 50);
+        //fame = Random.Range(30, 50);
+        influence = 100;
+        fame = 100;
         ego = Random.Range(30, 50);
         rizz = Random.Range(30, 50);
         //Create Royal Faction NPCs
@@ -113,8 +116,9 @@ public class GameManager : MonoBehaviour {
         CreateNPC(2, 4, 0, 50, 0, 50, 0, 50);
         CreateNPC(1, 4, 10, 60, 10, 60, 10, 60, NPCNames[Random.Range(0, NPCNames.Length)] + " the Wandought" );
         //Create Merchant Faction NPCs
-        CreateNPC(2, 5, 30, 70, 30, 70, 50, 100);
-        CreateNPC(1, 5, 40, 80, 40, 80, 60, 110, NPCNames[Random.Range(0, NPCNames.Length)] + " the Gentry");
+        CreateNPC(3, 5, 100, 100, 30, 70, 50, 100);
+        //CreateNPC(2, 5, 30, 70, 30, 70, 50, 100);
+        //CreateNPC(1, 5, 40, 80, 40, 80, 60, 110, NPCNames[Random.Range(0, NPCNames.Length)] + " the Gentry");
         //Create Military Faction NPCs
         CreateNPC(2, 6, 50, 100, 30, 70, 0, 50);
         CreateNPC(1, 6, 60, 110, 40, 80, 10, 60, "General " + NPCNames[Random.Range(0, NPCNames.Length)] + " " + NPCLastNames[Random.Range(0, NPCNames.Length)]);
@@ -210,6 +214,9 @@ public class GameManager : MonoBehaviour {
     public int getDefeatedFactions(){
         return defeatedFactions;
     }
+    public bool getFactionDefeated(int FactionNumber){
+        return FactionsDefeated[FactionNumber];
+    }
 
     //Set Functions
     public void setInfluence(int newVal){
@@ -244,5 +251,8 @@ public class GameManager : MonoBehaviour {
     }
     public void setDefeatedFactions(int newVal){
         defeatedFactions = newVal;
+    }
+    public void setFactionsDefeated(int FactionNumber, bool newVal){
+        FactionsDefeated[FactionNumber] = newVal; 
     }
 }
