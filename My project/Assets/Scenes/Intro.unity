@@ -204,23 +204,23 @@ MonoBehaviour:
   NumNPCs: 0
   fame: 100
   royal: {fileID: 3939943615491028165, guid: 89669d058c3b9a648a55fd7d12eb6732, type: 3}
-  royalGoon1: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
-  royalGoon2: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
+  royalGoon1: {fileID: 6216637401273474131, guid: 44cb7d4f9a41c4d4397844b8b89258f2, type: 3}
+  royalGoon2: {fileID: 6055992378711982320, guid: 3b2b5e55339d5f34b9b579d466c74360, type: 3}
   church: {fileID: 782602235321451872, guid: af93122907b83964cb8aa9c11364d5df, type: 3}
-  churchGoon1: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
-  churchGoon2: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
-  populist: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
-  populistGoon1: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
-  populistGoon2: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
+  churchGoon1: {fileID: 8801460734070684719, guid: 4d06c9373c6d1544a9b0e21d6e46c157, type: 3}
+  churchGoon2: {fileID: 6257523037307547895, guid: 66e5548f79be10b46ac3c3dcc5dfead4, type: 3}
+  populist: {fileID: 5283428009324044541, guid: 6468e1eaed463624296e32ae826c6710, type: 3}
+  populistGoon1: {fileID: 8201031418283963944, guid: bc989af0d17432c48961e39ce487f3da, type: 3}
+  populistGoon2: {fileID: 7457213496364616205, guid: ad65983fe2566d143a8c2dc775c309ad, type: 3}
   peasent: {fileID: 15490376325863067, guid: d143ec89e05f36e469cb2c6a907969be, type: 3}
-  peasentGoon1: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
-  peasentGoon2: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
+  peasentGoon1: {fileID: 4955991911818290055, guid: c31ba3d5b74835d4997376d052f9959c, type: 3}
+  peasentGoon2: {fileID: 5509248814152776166, guid: 9593eb8bbda7b6942b7484e01c8f077d, type: 3}
   merchent: {fileID: 6251670214450978335, guid: 3ff56d4ed9103a047b6173d15f3bea71, type: 3}
-  merchentGoon1: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
-  merchentGoon2: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
+  merchentGoon1: {fileID: 4669950886576912448, guid: e0c0786207f8f5a40a822ce420bd5007, type: 3}
+  merchentGoon2: {fileID: 7417271468815531214, guid: 947cbc5525e51f240a16e88c74b018f5, type: 3}
   military: {fileID: 4818258441949802722, guid: 7dd58667a27c24343be7f2cbed478d8b, type: 3}
-  militaryGoon1: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
-  militaryGoon2: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
+  militaryGoon1: {fileID: 153998085419125385, guid: b61f9d01f748b0d4ebb3f6d958e255cb, type: 3}
+  militaryGoon2: {fileID: 3588734335968972292, guid: 9ea9d2f4fd2010c47af1751ef415dcf9, type: 3}
 --- !u!224 &30365583
 RectTransform:
   m_ObjectHideFlags: 0
