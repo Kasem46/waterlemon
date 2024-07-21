@@ -215,10 +215,10 @@ MonoBehaviour:
   peasent: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
   peasentGoon1: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
   peasentGoon2: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
-  merchent: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
+  merchent: {fileID: 6251670214450978335, guid: 3ff56d4ed9103a047b6173d15f3bea71, type: 3}
   merchentGoon1: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
   merchentGoon2: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
-  military: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
+  military: {fileID: 4818258441949802722, guid: 7dd58667a27c24343be7f2cbed478d8b, type: 3}
   militaryGoon1: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
   militaryGoon2: {fileID: 7274168008442378660, guid: 9989430127cd2644ca824e74a7bc4150, type: 3}
 --- !u!224 &30365583
@@ -253,6 +253,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d1a35c23ba9f33409bbfc52e1f50bf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Audio: {fileID: 0}
 --- !u!1 &127105331
 GameObject:
   m_ObjectHideFlags: 0
