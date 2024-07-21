@@ -97,10 +97,8 @@ public class GameManager : MonoBehaviour {
     void Start(){
         DontDestroyOnLoad(this.gameObject);
         //Stats randomization
-        //influence = Random.Range(30, 50);
-        //fame = Random.Range(30, 50);
-        influence = 100;
-        fame = 100;
+        influence = Random.Range(30, 50);
+        fame = Random.Range(30, 50);
         ego = Random.Range(30, 50);
         rizz = Random.Range(30, 50);
         //Create Royal Faction NPCs
@@ -116,9 +114,8 @@ public class GameManager : MonoBehaviour {
         CreateNPC(2, 4, 0, 50, 0, 50, 0, 50);
         CreateNPC(1, 4, 10, 60, 10, 60, 10, 60, NPCNames[Random.Range(0, NPCNames.Length)] + " the Wandought" );
         //Create Merchant Faction NPCs
-        CreateNPC(3, 5, 100, 100, 30, 70, 50, 100);
-        //CreateNPC(2, 5, 30, 70, 30, 70, 50, 100);
-        //CreateNPC(1, 5, 40, 80, 40, 80, 60, 110, NPCNames[Random.Range(0, NPCNames.Length)] + " the Gentry");
+        CreateNPC(2, 5, 30, 70, 30, 70, 50, 100);
+        CreateNPC(1, 5, 40, 80, 40, 80, 60, 110, NPCNames[Random.Range(0, NPCNames.Length)] + " the Gentry");
         //Create Military Faction NPCs
         CreateNPC(2, 6, 50, 100, 30, 70, 0, 50);
         CreateNPC(1, 6, 60, 110, 40, 80, 10, 60, "General " + NPCNames[Random.Range(0, NPCNames.Length)] + " " + NPCLastNames[Random.Range(0, NPCNames.Length)]);
