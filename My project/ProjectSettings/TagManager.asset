@@ -18,6 +18,7 @@ TagManager:
   - Deck1
   - Deck2
   - Deck3
+  - Tutorial
   layers:
   - Default
   - TransparentFX

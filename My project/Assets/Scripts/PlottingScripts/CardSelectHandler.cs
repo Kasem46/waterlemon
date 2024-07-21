@@ -27,7 +27,6 @@ public class CardSelectHandler : MonoBehaviour
                 Deck3.SetActive(false);
                 break;
             case 0:
-                Debug.Log("1");
                 DisplayDeck.SetActive(false);
                 Deck1.SetActive(true);
                 Deck2.SetActive(false);
