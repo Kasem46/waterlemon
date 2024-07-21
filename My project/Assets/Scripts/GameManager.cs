@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
     public int NumNPCs = 0;
     //Define influence recovery varibles
     private int dailyRecoverPercent = 5;
+    private float AudioVolume = 1;
 
     //NPC names, 
     string[] NPCNames  = new string[] {"Edmund", "Alistair", "Leopold", "Maximus", "Darian", "Aricor", "Everard", "Romarian", "Percival Magnus", "Amara", "Gwendolyn", "Emmaline", "Isadora", "Victoria", "Gabriella", "Matilda Gracebourne", "Regalis", "Thaddeus", "Arghun"};
@@ -219,6 +220,9 @@ public class GameManager : MonoBehaviour {
     public bool getFactionDefeated(int FactionNumber){
         return FactionsDefeated[FactionNumber];
     }
+    public float getAudio(){
+        return AudioVolume;
+    }
 
     //Set Functions
     public void setInfluence(int newVal){
@@ -256,5 +260,8 @@ public class GameManager : MonoBehaviour {
     }
     public void setFactionsDefeated(int FactionNumber, bool newVal){
         FactionsDefeated[FactionNumber] = newVal; 
+    }
+    public void setAudio(float newVal){
+        AudioVolume = newVal;
     }
 }
