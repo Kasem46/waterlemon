@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update(){
-        if (influence <= 0 || day > 30) {
+        if (influence <= 0 || day > 356) {
             SceneManager.LoadScene("Lose");
             Destroy(this.gameObject);
         }  else if (defeatedFactions == 6) {

@@ -1,19 +1,38 @@
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class MoveObjectUp : MonoBehaviour
-{
-    // Start is called before the first frame update
-    public GameObject mover;
-    public float speed = 5f;
+public class MoveObjectUp : MonoBehaviour {
+
+    RectTransform canvas;
+    RectTransform button;
+    Vector3 startingPosition;
+    Vector3 newPosition;
+    public float speed;
+
     void Start(){
-        
+        button = gameObject.GetComponent<RectTransform>();
+        canvas = GameObject.Find("Canvas").GetComponent<RectTransform>();
+        startingPosition = transform.position;
+        speed = 1f;
     }
-
-    // Update is called once per frame
-    void Update(){
-        transform.position = new Vector3(transform.position.x, transform.position.y + speed * Time.deltaTime, transform.position.z);
-        speed += 2f * Time.deltaTime;
+    public void MoveUp(){
+        StartCoroutine(moveUp());
+    }
+    IEnumerator moveUp () {
+        transform.position = new Vector3(startingPosition.x, startingPosition.y - 10, startingPosition.z);
+        newPosition = transform.position;
+        while (newPosition.y < startingPosition.y){
+            newPosition = transform.position;
+            transform.Translate(0f, speed * Time.deltaTime , 0f);
+            yield return null;
+        }
+        if (newPosition.y != startingPosition.y){
+            newPosition.y = startingPosition.y;
+        }
+	}
+    public void moveDown(){
+        newPosition = transform.position;
+        transform.Translate(0f, speed * Time.deltaTime , 0f);
     }
 }
