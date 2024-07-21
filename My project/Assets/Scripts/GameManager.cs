@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour {
 
     //Deck Type
     int deckType;
+    //Defeated Factions
+    int defeatedFactions = 0;
 
     //NPC Sprite variables
     [SerializeField]
@@ -141,13 +143,15 @@ public class GameManager : MonoBehaviour {
         NPCs[17].setSprite(military);
     }
 
-
-
     // Update is called once per frame
     void Update(){
         if (influence <= 0) {
             SceneManager.LoadScene("Lose");
-        }  
+            Destroy(this.gameObject);
+        }  else if (defeatedFactions == 6) {
+            SceneManager.LoadScene("Win");
+            Destroy(this.gameObject);
+        }
     }
 
 
@@ -203,6 +207,9 @@ public class GameManager : MonoBehaviour {
     public int getDeckType(){
         return deckType;
     }
+    public int getDefeatedFactions(){
+        return defeatedFactions;
+    }
 
     //Set Functions
     public void setInfluence(int newVal){
@@ -234,5 +241,8 @@ public class GameManager : MonoBehaviour {
     }
     public void setDeckType(int newVal){
         deckType = newVal;
+    }
+    public void setDefeatedFactions(int newVal){
+        defeatedFactions = newVal;
     }
 }

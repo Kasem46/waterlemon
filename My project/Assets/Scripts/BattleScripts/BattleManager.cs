@@ -160,7 +160,6 @@ public class BattleManager : MonoBehaviour
                     break;
                 case 4:
                     poison(targetSelector.value,(float)manager.getRizz());
-                    setBattleText("Player Poisoned " + target.getName());
                     break;
                 default:
                     Debug.Log("invalid player option");
