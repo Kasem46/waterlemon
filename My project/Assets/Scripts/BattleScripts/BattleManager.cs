@@ -84,6 +84,9 @@ public class BattleManager : MonoBehaviour
     void Update()
     {
         updateUI();
+        if (manager.getEnergy() <= 0) {
+            LEAVE();
+        }
     }
 
     //reference key for acction codes

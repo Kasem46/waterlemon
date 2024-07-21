@@ -47,23 +47,23 @@ public class MapControl : MonoBehaviour{
         Vassalize("Populist", 2);
     }
     public void PeasantVassal(){
-        Vassalize("Pesant", 3);
+        Vassalize("Peasant", 3);
     }
     public void MilitaryVassal(){
-        Vassalize("Church", 5);
+        Vassalize("Military", 5);
     }
     public void MerchantVassal(){
-        Vassalize("Church", 4);
+        Vassalize("Merchant", 4);
     }
 
     private void Vassalize(string factionName, int factionNumber){
-        if(NPCs[0 + factionNumber * 3].getInfluence() + NPCs[1 + factionNumber * 3].getInfluence() + NPCs[1 + factionNumber * 3].getInfluence() >= 270 && manager.getFame() >= 80 && vassalMode == true){
+        if(NPCs[0 + factionNumber * 3].getInfluence() + NPCs[1 + factionNumber * 3].getInfluence() + NPCs[2 + factionNumber * 3].getInfluence() >= 270 && manager.getFame() >= 80 && vassalMode == true){
             delete = GameObject.Find(factionName);
             delete.SetActive(false);
             manager.setFame(manager.getFame() - 60);
             manager.SetDailyRecovery(manager.getDailyRecovery() + 5);
             manager.setDefeatedFactions(manager.getDefeatedFactions() + 1);
-        } else if (NPCs[0 + factionNumber * 3].getInfluence() + NPCs[1 + factionNumber * 3].getInfluence() + NPCs[1 + factionNumber * 3].getInfluence() <= 30 && manager.getFame() <= -80 && vassalMode == false) {
+        } else if (NPCs[0 + factionNumber * 3].getInfluence() + NPCs[1 + factionNumber * 3].getInfluence() + NPCs[2 + factionNumber * 3].getInfluence() <= 30 && manager.getFame() <= -80 && vassalMode == false) {
             delete = GameObject.Find(factionName);
             delete.SetActive(false);
             manager.setFame(manager.getFame() - 60);
