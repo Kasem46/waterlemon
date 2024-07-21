@@ -31,27 +31,50 @@ public class ControlVaribles : MonoBehaviour{
             int rizz = manager.getRizz();
             int days = manager.getDay();
             influenceText.text  = "Influence: " + influence;
-            egoText.text = "Ego: " + ego;
-            rizzText.text = "Rizz: " + rizz;
             energyText.text = "Energy: " + energy;
-            
             day.text = "Day: " + days;
             if (fame >= 0){
                 fameText.text = "Fame: " + fame;
             } else {
                 fameText.text = "Infamy: " + (fame * -1);
             } 
+            try{
+                egoText.text = "Ego: " + ego;
+                rizzText.text = "Charisma: " + rizz;
+            } catch {
+                try {
+                    rizzText = GameObject.Find("rizzText").GetComponent<Text> ();
+                    egoText = GameObject.Find("egoText").GetComponent<Text> ();
+                } catch {
+                    
+                }
+            }
         } catch {
             try{ 
                 //Find relevent text objects and apply them to GameManager
                 influenceText = GameObject.Find("Text_Influence").GetComponent<Text> ();
+                energyText = GameObject.Find("Text_Energy").GetComponent<Text> ();
+                day = GameObject.Find("dayText").GetComponent<Text> ();
                 fameText = GameObject.Find("Text_Fame").GetComponent<Text> ();
-                rizzText = GameObject.Find("Text (Legacy) (4)").GetComponent<Text> ();
-                energyText = GameObject.Find("Text (Legacy) (2)").GetComponent<Text> ();
-                egoText = GameObject.Find("Text (Legacy) (3)").GetComponent<Text> ();
-                day = GameObject.Find("Text (Legacy) (5)").GetComponent<Text> ();
                 manager.setDay(manager.getDay() + 1);
                 manager.setInfluence(manager.getDailyRecovery() + manager.getInfluence());
+                switch(manager.getEnergy()){
+                    case int n when (n > 60):
+                        manager.setEnergy(100);
+                        break;
+                    case int n when (n >= 40 && n < 60):
+                        manager.setEnergy(80);
+                        break;
+                    case int n when (n >= 20 && n < 40):
+                        manager.setEnergy(50);
+                        break;
+                    case int n when (n >= 10 && n < 20):
+                        manager.setEnergy(30);
+                        break;
+                    case int n when (n >= 1 && n < 10):
+                        manager.setEnergy(20);
+                        break;
+                }
             } catch {
 
             }

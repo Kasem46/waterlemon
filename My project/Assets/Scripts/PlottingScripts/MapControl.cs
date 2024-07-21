@@ -118,8 +118,8 @@ public class MapControl : MonoBehaviour{
             if (manager.getFactionDefeated(5) == true){
                 Mil.SetActive(true);
             }
-            return true;
             setMap();
+            return true;
         } else if (NPCs[0 + factionNumber * 3].getInfluence() + NPCs[1 + factionNumber * 3].getInfluence() + NPCs[2 + factionNumber * 3].getInfluence() <= 30 && manager.getFame() <= -80 && vassalMode == false) {
             delete = GameObject.Find(factionName);
             delete.SetActive(false);
@@ -145,8 +145,8 @@ public class MapControl : MonoBehaviour{
             if (manager.getFactionDefeated(5) == true){
                 Mil.SetActive(true);
             }
-            return true;
             setMap();
+            return true;
         } else {
             return false;
         }
