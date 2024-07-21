@@ -16,6 +16,9 @@ public class PlotElementControler : MonoBehaviour {
     private GameObject[] Miror;
     private GameObject[] Raid;
     private GameObject[] Tavern;
+    public GameObject Tutorial;
+    public GameObject Tutorial2;
+    public GameObject Tutorial3;
     public Dropdown NPCChooser;
     private GameObject[] Party;
     //Show/Hide main buttons    
@@ -96,6 +99,7 @@ public class PlotElementControler : MonoBehaviour {
     //Raid Toggles
 
     public void openRaid(){
+        enableTutorial2();
         hideMainButtons();
         foreach(GameObject go in Raid){
             go.SetActive (true);
@@ -143,6 +147,7 @@ public class PlotElementControler : MonoBehaviour {
 
     //Tavern Toggles
     public void openTavern(){
+        enableTutorial3();
         hideMainButtons();
         PopulateDropdown(NPCChooser, NPCs);
         foreach(GameObject go in Tavern){
@@ -198,12 +203,35 @@ public class PlotElementControler : MonoBehaviour {
     private void setParty(){
         Party = GameObject.FindGameObjectsWithTag ("Pinvite");
     }
+    //Enable Tutorial
+    public void enableTutorialBasic(int a = 0){
+        if (manager.getDay() > 0 || a == 1){
+            Tutorial.SetActive(false);
+        } else {
+            Tutorial.SetActive(true);
+        }
+    }
+    public void enableTutorial2(int a = 0){
+        if (manager.getDay() > 0 || a == 1){
+            Tutorial2.SetActive(false);
+        } else {
+            Tutorial2.SetActive(true);
+        }
+    }
+    public void enableTutorial3(int a = 0){
+        if (manager.getDay() > 0 || a == 1){
+            Tutorial3.SetActive(false);
+        } else {
+            Tutorial3.SetActive(true);
+        }
+    }
     // Start is called before the first frame update
     void Start(){
         test = FindObjectsOfType<GameManager>();
         manager = test[0];
         NPCs = manager.getNPCArray();
         setMainButtons();
+        enableTutorialBasic();
         setFactionBook();
         setParty();
         setRaid();
