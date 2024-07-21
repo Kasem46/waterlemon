@@ -16,6 +16,10 @@ public class RaidBattler : MonoBehaviour{
     public Image result1;
     public Image result2;
     public Image result3;
+    public Button button1;
+    public Button button2;
+    public Button button3;
+    
 
 
     public void Rock(){
@@ -35,13 +39,13 @@ public class RaidBattler : MonoBehaviour{
         AIChoice = Random.Range(0, 3);
         switch (AIChoice){
             case 0:
-                resultImage = result1;
+                resultImage.sprite = result1.sprite;
                 break;
             case 1: 
-                resultImage = result2;
+                resultImage.sprite = result2.sprite;
                 break;
             case 2:
-                resultImage = result3;
+                resultImage.sprite = result3.sprite;
                 break;
         }
         StartCoroutine(showAiChoice());
@@ -67,14 +71,14 @@ public class RaidBattler : MonoBehaviour{
     }
 
     IEnumerator showAiChoice(){
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         resultImageObj.SetActive(true);
         yield return new WaitForSeconds(3);
         resultImageObj.SetActive(false);
     }
 
     IEnumerator showResult(int win){
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         switch (win){
             case 0:
                 result.text = "Result: Victory!\nFame increased!";
@@ -94,6 +98,12 @@ public class RaidBattler : MonoBehaviour{
                 controller.closeRaid();
                 break;
         }
+        button1.enabled = false;
+        button2.enabled = false;
+        button3.enabled = false;
+        button1.enabled = true;
+        button2.enabled = true;
+        button3.enabled = true;
         
     }
 
