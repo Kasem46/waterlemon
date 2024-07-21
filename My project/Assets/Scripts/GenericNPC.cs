@@ -10,7 +10,7 @@ public class GenericNPC : ScriptableObject{
     private string name;
     private GameObject sprite;
 
-    private bool dead = true;
+    private bool dead = false;
 
     public void e(int inf = 0, int eg = 0, int riz = 0, int fac = 0, string nam = "UNNAMED"){
         influence = inf;
