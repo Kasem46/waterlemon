@@ -14,6 +14,10 @@ TagManager:
   - Raid
   - Tavern
   - Pinvite
+  - DisplayDeck
+  - Deck1
+  - Deck2
+  - Deck3
   layers:
   - Default
   - TransparentFX
