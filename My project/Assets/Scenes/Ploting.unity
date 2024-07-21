@@ -1040,8 +1040,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 224.56, y: -91.15001}
-  m_SizeDelta: {x: 46.77002, y: 90.25809}
+  m_AnchoredPosition: {x: 248.88, y: -90.54}
+  m_SizeDelta: {x: 95.41, y: 89.04}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &114887978
 MonoBehaviour:
@@ -10481,7 +10481,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1325546986
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11945,8 +11945,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 225.19, y: -90.82}
-  m_SizeDelta: {x: 128.39, y: 171.65}
+  m_AnchoredPosition: {x: 250.72, y: -90.82}
+  m_SizeDelta: {x: 179.46, y: 171.65}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1483378363
 MonoBehaviour:
@@ -11982,8 +11982,9 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: This is the raiding area. You choose a tactic, along with your enemy, after
-    which you win, lose, or draw. Raiding can gain or lose fame, and time passes
-    after a raid.
+    which you win, lose, or draw. For insance, a shield wall will beat an attack,
+    but will lose to diplomacy. Raiding can gain or lose fame, and time passes after
+    a raid.
 --- !u!222 &1483378364
 CanvasRenderer:
   m_ObjectHideFlags: 0
