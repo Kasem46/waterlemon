@@ -13,8 +13,16 @@ public class LoseManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        influence = GameObject.Find("GameManager").GetComponent<GameManager>().getInfluence();
-        dayCount = GameObject.Find("GameManager").GetComponent<GameManager>().getDay();
+        try
+        {
+            influence = GameObject.Find("GameManager").GetComponent<GameManager>().getInfluence();
+            dayCount = GameObject.Find("GameManager").GetComponent<GameManager>().getDay();
+        }
+        catch {
+            Debug.Log("Failed to get influence and daycount");
+            influence = 0;
+            dayCount = 1;
+        }
     }
 
     // Update is called once per frame

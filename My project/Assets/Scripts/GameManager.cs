@@ -146,13 +146,18 @@ public class GameManager : MonoBehaviour {
 
     // Update is called once per frame
     void Update(){
-        if (influence <= 0 || day > 356) {
+        
+
+
+        if ((influence <= 0 || day > 356) && SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Lose")) {
             SceneManager.LoadScene("Lose");
-            Destroy(this.gameObject);
-        }  else if (defeatedFactions == 6) {
+            
+        }  else if (defeatedFactions == 6 && SceneManager.GetActiveScene() != SceneManager.GetSceneByName("Win")) {
             SceneManager.LoadScene("Win");
-            Destroy(this.gameObject);
+            
         }
+
+        
     }
 
 
