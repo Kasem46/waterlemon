@@ -15,14 +15,13 @@ public class BattleStatsViewer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        manager = GameObject.Find("GameManager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        try
-        {
+        
             //Display current value of each stat
             int influence = manager.getInfluence();
             int fame = manager.getFame();
@@ -31,7 +30,7 @@ public class BattleStatsViewer : MonoBehaviour
             int rizz = manager.getRizz();
             influenceText.text = "Influence: " + influence;
             egoText.text = "Ego: " + ego;
-            rizzText.text = "Rizz: " + rizz;
+            rizzText.text = "Charisma: " + rizz;
             energyText.text = "Energy: " + energy;
             if (fame >= 0)
             {
@@ -41,22 +40,7 @@ public class BattleStatsViewer : MonoBehaviour
             {
                 fameText.text = "Infamy: " + (fame * -1);
             }
-        }
-        catch
-        {
-            try
-            {
-                //Find relevent text objects and apply them to GameManager
-                influenceText = GameObject.Find("Text_Influence").GetComponent<Text>();
-                fameText = GameObject.Find("Text_Fame").GetComponent<Text>();
-                rizzText = GameObject.Find("Text (Legacy) (4)").GetComponent<Text>();
-                energyText = GameObject.Find("Text (Legacy) (2)").GetComponent<Text>();
-                egoText = GameObject.Find("Text (Legacy) (3)").GetComponent<Text>();
-            }
-            catch
-            {
-
-            }
-        }
+          
+        
     }
 }
