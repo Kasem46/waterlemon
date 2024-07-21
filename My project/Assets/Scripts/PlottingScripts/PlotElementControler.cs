@@ -17,10 +17,6 @@ public class PlotElementControler : MonoBehaviour {
     private GameObject[] Raid;
     private GameObject[] Tavern;
     public Dropdown NPCChooser;
-    public Dropdown NPCChooser2;
-    public GameObject NPCChooserObject;
-    public GameObject NPCChooserButton;
-    public GameObject NPCChooserButton2;
     private GameObject[] Party;
     //Show/Hide main buttons    
     private void setMainButtons() {Buttons = GameObject.FindGameObjectsWithTag ("MainButtons");}
@@ -185,30 +181,6 @@ public class PlotElementControler : MonoBehaviour {
         Egochange.setEgo(Egochange.getEgo() - Random.Range(5, 10));
         closeTavern();
     }
-    //Start Bribe
-    public void openBribe(){
-        hideMainButtons();
-        PopulateDropdown(NPCChooser2, NPCs);
-        NPCChooserObject.SetActive(true);
-        NPCChooserButton.SetActive(true);
-        NPCChooserButton2.SetActive(true);
-    }
-    public void closeBribe(){
-        NPCChooserObject.SetActive(false);
-        NPCChooserButton.SetActive(false);
-        NPCChooserButton2.SetActive(false);
-        showMainButtons();
-    }
-    //Bribe selection
-    public void bribeSelection(){
-        int a = NPCChooser.value;
-        GenericNPC Egochange = NPCs[a]; 
-        Egochange.setInfluence(Egochange.getInfluence() + Random.Range(5, 10));
-        manager.setFame(manager.getFame() + Random.Range(5, 10));
-        manager.setEgo(manager.getEgo() - Random.Range(5, 10));
-        closeBribe();
-    }
-
     //Party Preping
      public void openParty(){
         hideMainButtons();
@@ -237,7 +209,6 @@ public class PlotElementControler : MonoBehaviour {
         setRaid();
         setMiror();
         setTavern();
-        closeBribe();
         closeTavernInitial();
         closeRaidInitial();
         closeFactionBook();
