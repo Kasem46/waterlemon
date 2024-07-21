@@ -37,8 +37,8 @@ public class PlotElementControler : MonoBehaviour {
     //Faction book toggles
     public void openFactionBook(){
         hideMainButtons();
-        factionPage1();
         book.SetActive (true);
+        factionPage1();
     }
     public void closeFactionBook(){
         foreach(GameObject go in FactionsArray1){
@@ -54,7 +54,6 @@ public class PlotElementControler : MonoBehaviour {
         showMainButtons();
     }
     private void setFactionBook(){
-        book.SetActive(false);
         FactionsArray1 = GameObject.FindGameObjectsWithTag ("FactionPage1");
         FactionsArray2 = GameObject.FindGameObjectsWithTag ("FactionPage2");
         FactionsArray3 = GameObject.FindGameObjectsWithTag ("FactionPage3");

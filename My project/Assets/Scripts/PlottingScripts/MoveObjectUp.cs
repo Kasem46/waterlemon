@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class MoveObjectUp : MonoBehaviour {
 
+    public PlotElementControler controler;
     RectTransform canvas;
     RectTransform button;
     Vector3 startingPosition;
@@ -13,10 +14,14 @@ public class MoveObjectUp : MonoBehaviour {
     void Start(){
         button = gameObject.GetComponent<RectTransform>();
         canvas = GameObject.Find("Canvas").GetComponent<RectTransform>();
+        controler = GameObject.Find("Canvas").GetComponent<PlotElementControler>();
         startingPosition = transform.position;
-        speed = 1f;
+        speed = 10f;
     }
-    public void MoveUp(){
+    public void MoveUp(int test){
+        if (test == 1){
+            controler.openFactionBook();
+        }
         StartCoroutine(moveUp());
     }
     IEnumerator moveUp () {
@@ -31,8 +36,22 @@ public class MoveObjectUp : MonoBehaviour {
             newPosition.y = startingPosition.y;
         }
 	}
-    public void moveDown(){
-        newPosition = transform.position;
-        transform.Translate(0f, speed * Time.deltaTime , 0f);
+    public void moveDown(int test){
+        StartCoroutine(MoveDown(test));
     }
+    IEnumerator MoveDown(int test) {
+        startingPosition = transform.position;
+        newPosition = transform.position;
+        while (newPosition.y > -10){
+            newPosition = transform.position;
+            transform.Translate(0f, -speed * Time.deltaTime , 0f);
+            yield return null;
+        }
+        transform.position = startingPosition;
+        if (test == 1){
+            controler.closeFactionBook();
+        } else {
+            controler.closeMiror();
+        }
+	}
 }
