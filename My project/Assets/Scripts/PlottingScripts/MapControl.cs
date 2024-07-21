@@ -100,6 +100,9 @@ public class MapControl : MonoBehaviour{
             manager.SetDailyRecovery(manager.getDailyRecovery() + 5);
             manager.setDefeatedFactions(manager.getDefeatedFactions() + 1);
             manager.setFactionsDefeated(factionNumber, true);
+            NPCs[0 + factionNumber * 3].setDead(true);
+            NPCs[1 + factionNumber * 3].setDead(true);
+            NPCs[2 + factionNumber * 3].setDead(true);
             if (manager.getFactionDefeated(0) == true){
                 Kings.SetActive(true);
             }
@@ -127,6 +130,9 @@ public class MapControl : MonoBehaviour{
             manager.SetDailyRecovery(manager.getDailyRecovery() + 5);
             manager.setDefeatedFactions(manager.getDefeatedFactions() + 1);
             manager.setFactionsDefeated(factionNumber, true);
+            NPCs[0 + factionNumber * 3].setDead(true);
+            NPCs[1 + factionNumber * 3].setDead(true);
+            NPCs[2 + factionNumber * 3].setDead(true);
             if (manager.getFactionDefeated(0) == true){
                 Kings.SetActive(true);
             }
