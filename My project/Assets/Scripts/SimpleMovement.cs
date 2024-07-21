@@ -18,9 +18,9 @@ public class SimpleMovement : MonoBehaviour{
             speed /= 2;
         }
         if (Input.GetKey("d") && player.transform.position.x < 31.80383){
-            transform.position = new Vector3(player.transform.position.x + a, -2.93f, -2f);
+            transform.position = new Vector3(player.transform.position.x + a, -2.5f, -2f);
         } else if (Input.GetKey("a") && player.transform.position.x > -8.340001f){
-            transform.position = new Vector3(player.transform.position.x -a, -2.93f, -2f);
+            transform.position = new Vector3(player.transform.position.x -a, -2.5f, -2f);
         }
         if (-4f >= player.transform.position.x){
             exitButton.SetActive(true);

@@ -37,4 +37,8 @@ public class LoseManager : MonoBehaviour
             loseType.text = "Your time is up, we can only hope the next minister does better";
         }
     }
+
+    public void quit() {
+        Application.Quit();
+    }
 }

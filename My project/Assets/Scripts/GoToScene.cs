@@ -23,4 +23,8 @@ public class GoToScene : MonoBehaviour {
     public void QuitGame() { 
         Application.Quit();
     }
+
+    public void moveToMenu() {
+        SceneManager.LoadScene("MainMenu");
+    }
 }
