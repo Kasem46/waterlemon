@@ -19,7 +19,6 @@ public class PlotElementControler : MonoBehaviour {
     public GameObject Tutorial;
     public GameObject Tutorial2;
     public GameObject Tutorial3;
-    public Dropdown NPCChooser;
     private GameObject[] Party;
     //Show/Hide main buttons    
     private void setMainButtons() {Buttons = GameObject.FindGameObjectsWithTag ("MainButtons");}
@@ -149,7 +148,6 @@ public class PlotElementControler : MonoBehaviour {
     public void openTavern(){
         enableTutorial3();
         hideMainButtons();
-        PopulateDropdown(NPCChooser, NPCs);
         foreach(GameObject go in Tavern){
             go.SetActive (true);
         }
@@ -166,25 +164,10 @@ public class PlotElementControler : MonoBehaviour {
         foreach(GameObject go in Tavern){
             go.SetActive (false);
         }
+        showMainButtons();
     }
     private void setTavern(){
         Tavern = GameObject.FindGameObjectsWithTag ("Tavern");
-    }
-    //Populate Tavern dropdown with NPCs
-    void PopulateDropdown (Dropdown dropdown, GenericNPC[] optionsArray) {
-        List<string> options = new List<string> ();
-        foreach (var option in optionsArray) {
-            options.Add(option.getName());
-        }
-        dropdown.ClearOptions ();
-        dropdown.AddOptions(options);
-    }
-    //On Dropdown Activation
-    public void dropdownSelection(){
-        int a = NPCChooser.value;
-        GenericNPC Egochange = NPCs[a]; 
-        Egochange.setEgo(Egochange.getEgo() - Random.Range(5, 10));
-        closeTavern();
     }
     //Party Preping
      public void openParty(){
